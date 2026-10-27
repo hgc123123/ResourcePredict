@@ -1,0 +1,6 @@
+{
+  "syntheticgpu01": {"gres_type": "synthetic_type_a", "installed_gpu_count": 4},
+  "syntheticgpu02": {"gres_type": "synthetic_type_b", "installed_gpu_count": 8},
+  "syntheticgpu03": {"gres_type": "synthetic_type_c", "installed_gpu_count": 8},
+  "syntheticgpu04": {"gres_type": null, "installed_gpu_count": 8}
+}

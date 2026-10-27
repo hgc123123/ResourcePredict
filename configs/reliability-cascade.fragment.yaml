@@ -1,0 +1,37 @@
+# Merge this mapping into the schema-specific paper.local.yaml. It is a
+# fragment, not a complete data configuration. This is the comparative fitting
+# engine; the primary classifier-free rule is exported by the formal runner.
+reliability_cascade:
+  qwen_variant: full
+  expected_backbone_contains: Qwen2.5-Coder-1.5B-Instruct
+  history_k: 5
+  history_half_life_hours: 168.0
+  history_experts:
+    - hierarchical_last
+    - hierarchical_median3
+    - hierarchical_median5
+    - hierarchical_decay
+  validation_fit_fraction: 0.70
+  refit_on_full_validation: false
+  require_exact_script_for_bypass: true
+  reliability_error_cap: 0.10
+  pre_gate:
+    thresholds: [0.0, 0.50, 0.60, 0.70, 0.80, 0.90, 0.95, 1.01]
+    n_estimators: 100
+    learning_rate: 0.03
+    max_depth: 2
+  post_gate:
+    enabled: true
+    n_estimators: 120
+    learning_rate: 0.03
+    max_depth: 2
+  trust_region:
+    enabled: true
+    base_radius: 0.025
+    mad_scale: 2.0
+    max_radius: 0.10
+  selection:
+    objective: constrained_efficiency
+    max_mae_increase_vs_accuracy_reference: 0.001
+    max_rmse_increase_vs_accuracy_reference: 0.002
+    max_acc_drop_vs_accuracy_reference: 0.005

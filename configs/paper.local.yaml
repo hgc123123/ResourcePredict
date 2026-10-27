@@ -1,0 +1,304 @@
+# Configuration for the documented job-efficiency CSV schema. The private CSV
+# is not distributed with this repository; set data.path to its local location.
+# Single-run default only. The formal runner explicitly executes 40-44.
+seed: 42
+
+data:
+  # Export JOB_EFFICIENCY_CSV with the private raw-CSV path before launch.
+  path: ${JOB_EFFICIENCY_CSV}
+  # Exact paper trace. A changed or partially copied CSV fails closed.
+  expected_sha256: 7967f923899dbad19ab79416bdfd999ca5174e1dd4086d0a97fa43296a8379cf
+  expected_raw_row_count: 19352
+  expected_retained_row_count: 19352
+  expected_row_count: 19321
+  expected_valid_memory: 19321
+  expected_valid_vram: 10169
+  expected_valid_by_split:
+    memory: {train: 15458, validation: 1927, test: 1936}
+    vram: {train: 6442, validation: 1801, test: 1926}
+  csv_encoding: utf-8-sig
+  csv_field_size_limit_bytes: 67108864
+  expected_columns:
+    - jobid
+    - jobname
+    - user
+    - partition
+    - submit
+    - start1
+    - end1
+    - state1
+    - elapsed
+    - exitcode
+    - cpu
+    - gpu
+    - mem
+    - time
+    - nodelist
+    - cpu_eff
+    - mem_eff
+    - mem_max
+    - mem_p95
+    - mem_capacity_max
+    - gpu_util
+    - vram_eff
+    - vram_max
+    - vram_p95
+    - vram_capacity_max
+    - script_content
+    - workdir
+  timestamp_timezone: Asia/Shanghai
+  time_validation:
+    check_elapsed: true
+    tolerance_seconds: 1
+  require_unique_job_ids: true
+  # Stored values are fractions: 0.9439 means 94.39%, so do not use percent.
+  # mem_max and vram_max are sampled-peak utilization ratios in [0,1].
+  label_scale: ratio
+  label_out_of_range: error
+  filters:
+    states: [COMPLETED]
+    exit_codes: ["0:0"]
+  forbidden_metadata_columns:
+    # Keep the structured branch limited to cpu, mem, gpu, time, and mem/cpu.
+    - jobid
+    - jobname
+    - user
+    - partition
+    - submit
+    - start1
+    - end1
+    - state1
+    - elapsed
+    - exitcode
+    - nodelist
+    - cpu_eff
+    - mem_eff
+    - mem_max
+    - mem_p95
+    - mem_capacity_max
+    - gpu_util
+    - vram_eff
+    - vram_max
+    - vram_p95
+    - vram_capacity_max
+    - script_content
+    - workdir
+  code_redaction:
+    enabled: true
+    # Extend this list with every site-specific storage prefix before release.
+    path_prefixes: [/gpfsnyu/home, /gpfsnyu/scratch]
+  columns:
+    job_id: jobid
+    job_name: jobname
+    user: user
+    partition: partition
+    code: script_content
+    gpu_count: gpu
+    memory_peak: mem_max
+    vram_peak: vram_max
+    # No telemetry-validity fields are present in the documented header.
+    memory_valid: null
+    vram_valid: null
+    state: state1
+    exit_code: exitcode
+    order: submit
+    submit_time: submit
+    start_time: start1
+    completion_time: end1
+    elapsed: elapsed
+    time_limit: time
+    node_list: nodelist
+    memory_peak_absolute: mem_capacity_max
+    vram_peak_absolute: vram_capacity_max
+    workdir: workdir
+  # Only submission-time request fields are model inputs. In particular,
+  # mem_capacity_max and vram_capacity_max are post-execution absolute peaks
+  # and must never be added here.
+  metadata_features:
+    - {name: cpu_request, column: cpu, transform: identity}
+    - {name: memory_request, column: mem, transform: identity}
+    - {name: gpu_request, column: gpu, transform: identity}
+    # 599940 min = 9999 h = 416 d 15 h, matching the largest finite form in
+    # this export. Verify it against Slurm partition MaxTime before the paper run.
+    - name: walltime_request
+      column: time
+      parser: slurm_minutes
+      transform: identity
+      allow_truncated: true
+      unlimited_as_max: true
+      unlimited_minutes: 599940
+    - {name: memory_per_core, numerator: mem, denominator: cpu, transform: ratio, denominator_floor: 1}
+  metadata_standardization: zscore
+  require_complete_metadata: true
+  metadata_categorical: []
+
+split:
+  train_ratio: 0.8
+  validation_ratio: 0.1
+  order_type: datetime
+  order_semantics: submission_time
+  # The complete runner creates this manifest once inside its new experiment
+  # root. Every fitting/evaluation stage then reopens it fail-closed.
+  manifest: ${EXPERIMENT_SPLIT_MANIFEST}
+  create_if_missing: false
+  expected_counts: {train: 15458, validation: 1927, test: 1936}
+  expected_fingerprint: 85d00ce3a9fb6fe39e1be66ff91169daad85d7b217bc0b971c6dd251d845e3ce
+  expected_order_fingerprint: 577246e5a88c5ee71ad181e3a9c4253f55d01db665a96a3b8cefb7ab0fef1b1f
+  expected_manifest_sha256: 560a95f62c5e37639e869da42499ba44dff3e4208736178c8d10d59cfbeb6b87
+  # Fix the two cutoffs from the original 80/10/10 assignment, then remove
+  # train/validation rows whose labels were unavailable at their next cutoff.
+  # Remaining rows keep their original split; they are never redistributed.
+  require_completed_labels_at_boundaries: true
+  boundary_completion_policy: purge
+
+evaluation:
+  clip_predictions: true
+  acc_tolerance: 0.10
+
+training:
+  batch_size: 64
+  epochs: 30
+  patience: 5
+  learning_rate: 0.001
+  weight_decay: 0.01
+  user_dropout: 0.20
+  smooth_l1_beta: 0.10
+  vram_loss_weight: 2.0
+  num_workers: 2
+  device: auto
+
+text:
+  max_vocabulary: 30000
+  min_frequency: 2
+  max_tokens: 512
+  embedding_dim: 128
+
+textcnn:
+  kernel_sizes: [3, 4, 5]
+  filters_per_kernel: 64
+  user_embedding_dim: 16
+  metadata_hidden_dim: 32
+  hidden_dim: 128
+  dropout: 0.50
+
+lstm:
+  hidden_dim: 128
+  layers: 1
+  bidirectional: true
+  user_embedding_dim: 16
+  metadata_hidden_dim: 32
+  head_hidden_dim: 128
+  dropout: 0.30
+
+xgboost:
+  include_user: true
+  n_estimators: 500
+  learning_rate: 0.02
+  max_depth: 2
+  min_child_weight: 50
+  gamma: 1.0
+  reg_alpha: 10.0
+  reg_lambda: 10.0
+  early_stopping_rounds: 30
+  tree_method: hist
+  n_jobs: 8
+
+qwen:
+  # Final-manuscript protocol: reserve a chronological training tail for selection.
+  base_selection:
+    mode: train_tail
+    fit_fraction: 0.90
+  model_name_or_path: ${MODEL_DIR}
+  max_tokens: 4096
+  head_fraction: 0.60
+  prompt_prefix: ""
+  prompt_suffix: ""
+  fusion_dim: 256
+  user_embedding_dim: 64
+  head_hidden_dim: 128
+  dropout: 0.30
+  smooth_l1_beta: 0.10
+  vram_loss_weight: 2.0
+  learning_rate: 0.0001
+  head_learning_rate: 0.0005
+  weight_decay: 0.05
+  batch_size: 2
+  eval_batch_size: 4
+  gradient_accumulation_steps: 2
+  epochs: 20
+  patience: 5
+  precision: bf16
+  quantization: none
+  gradient_checkpointing: true
+  lora:
+    enabled: true
+    r: 16
+    alpha: 32
+    dropout: 0.10
+    target_modules: [q_proj, k_proj, v_proj, o_proj]
+
+last1:
+  protocol: completed_before_submission
+  fallback: train_resource_median
+
+hybrid:
+  alpha_grid_step: 0.01
+  selection_objective: mae
+  max_acc_drop_vs_reference: 0.0
+  max_rmse_increase_vs_reference: 0.0
+  max_mae_increase_vs_reference: 0.0
+  guard_budget_fractions: [0.0, 0.25, 0.50, 0.75, 1.0]
+  script_guard_min_stratum_n: 100
+  script_guard_require_changed_budget_ge_same: true
+  same_script_beta_values: [0.0, 0.25, 0.50, 0.75, 1.0]
+  same_script_min_effective_n: 100
+
+reliability_cascade:
+  # Comparative fitting/selection engine. The publication launcher separately
+  # exports the classifier-free primary exact-bypass path from frozen Full.
+  require_independent_base_selection: true
+  # Paths may be supplied on the command line instead of stored here.
+  qwen_variant: full
+  expected_backbone_contains: Qwen2.5-Coder-1.5B-Instruct
+  history_k: 5
+  history_half_life_hours: 168.0
+  history_experts:
+    - hierarchical_last
+    - hierarchical_median3
+    - hierarchical_median5
+    - hierarchical_decay
+  validation_fit_fraction: 0.70
+  refit_on_full_validation: false
+  require_exact_script_for_bypass: true
+  reliability_error_cap: 0.10
+  pre_gate:
+    thresholds: [0.0, 0.50, 0.60, 0.70, 0.80, 0.90, 0.95, 1.01]
+    n_estimators: 100
+    learning_rate: 0.03
+    max_depth: 2
+  post_gate:
+    enabled: true
+    n_estimators: 120
+    learning_rate: 0.03
+    max_depth: 2
+  trust_region:
+    enabled: true
+    base_radius: 0.025
+    mad_scale: 2.0
+    max_radius: 0.10
+  selection:
+    objective: constrained_efficiency
+    max_mae_increase_vs_accuracy_reference: 0.001
+    max_rmse_increase_vs_accuracy_reference: 0.002
+    max_acc_drop_vs_accuracy_reference: 0.005
+
+analysis:
+  paired_significance:
+    bootstrap_replicates: 10000
+    bootstrap_seed: 2026
+    confidence_level: 0.95
+    block_frequency: 1D
+    mcnemar_exact_threshold: 25
+
+outputs:
+  root: outputs

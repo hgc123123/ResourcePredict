@@ -1,0 +1,26 @@
+{
+  "schema": "sampled-peak-target-contract/v1",
+  "scope": "Author-described final manuscript target semantics; not a reconstruction of raw telemetry",
+  "sampling_interval_seconds": 10,
+  "sampling_interval_source": "Final manuscript Section 3.3; historical per-sample scrape configuration is not supplied",
+  "memory": {
+    "formula": "node_count * maximum_observed_node_usage / total_job_allocated_memory",
+    "denominator": "Total job-allocated memory from Slurm AllocTRES",
+    "assumption": "Equal allocated memory per node within a job; numerator and denominator use consistent units",
+    "interpretation": "Maximum sampled per-node utilization ratio, not simultaneous aggregate usage"
+  },
+  "vram": {
+    "formula": "maximum_over_allocated_GPUs_and_observed_times(used_memory / registered_per_GPU_capacity)",
+    "denominator": "Corresponding per-device capacity from the external site inventory",
+    "assumption": "Homogeneous GPUs within each job; usage and capacity use consistent units",
+    "inventory_distributed": false
+  },
+  "missingness": {
+    "partial_gaps": "Omit absent observations from the sampled peak; unobserved spikes are not recovered",
+    "no_valid_resource_samples": "Invalid resource label, excluded from that resource loss and metrics",
+    "sample_level_quality_indicators_retained": false,
+    "independent_label_finalization_timestamp_retained": false,
+    "replay_assumption": "Recorded resource labels become available at recorded job completion"
+  },
+  "pipeline_input": "Precomputed exported mem_max and vram_max ratios; experiment code does not regenerate raw Prometheus peaks"
+}

@@ -1,0 +1,9 @@
+{
+  "synthetic": true,
+  "description": "Fictional example only; not a registry for the paper trace",
+  "capacity_unit": "MiB",
+  "historical_mapping_confirmed": false,
+  "source": "Synthetic schema example",
+  "effective_from": null,
+  "effective_until": null
+}

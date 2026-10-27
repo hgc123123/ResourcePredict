@@ -1,0 +1,3 @@
+-r requirements.txt
+-r requirements-qwen.txt
+matplotlib>=3.9,<4

@@ -1,0 +1,13 @@
+-r requirements-qwen.txt
+
+# Versions recorded for the paper experiments. The cluster's PyTorch module
+# supplied the CUDA 12.6 runtime; verify that runtime with
+# scripts/capture_environment.py before launching the formal workflow.
+numpy==2.1.3
+pandas==2.3.0
+scikit-learn==1.7.0
+xgboost==3.0.2
+torch==2.7.1
+transformers==4.52.4
+peft==0.15.2
+accelerate==1.7.0
