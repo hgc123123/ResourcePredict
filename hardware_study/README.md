@@ -11,7 +11,7 @@ Production node lists, hardware registries, and experimental results are not dis
 - Capacity registry: `{"node_name": 24576}`. Values are positive integer capacities per GPU; do not multiply them by the job's requested GPU count.
 - Model registry: `{"node_name": {"gres_type": "model_name", "installed_gpu_count": 8}}`. Set the model type to `null` when it cannot be confirmed. The installed GPU count is not the job's requested GPU count.
 
-`examples/*.synthetic.json` contains fictional schema examples, not production nodes. These examples cannot reproduce the manuscript's hardware strata. The optional `--registry-provenance` argument accepts an external provenance JSON file recording capacity units, registry sources, and applicable dates. The analysis hashes the supplied registries and provenance file separately; the release does not include production hardware registries.
+`examples/*.synthetic.json` contains fictional schema examples, not production nodes. Reproducing the production hardware strata requires the corresponding private registries. The optional `--registry-provenance` argument accepts an external provenance JSON file recording capacity units, registry sources, and applicable dates. The analysis hashes the supplied registries and provenance file separately; the release does not include production hardware registries.
 
 A current hardware inventory does not establish that configurations were unchanged during the historical study period. Use `--historical-mapping-confirmed` only when supporting evidence exists. This flag records the caller's confirmation; it does not replace historical hardware logs. Specify capacity units with `--capacity-unit`; values are not automatically converted or rounded.
 
@@ -62,4 +62,4 @@ Run tests without the original data, production registries, or training results:
 python -m unittest discover -s hardware_study -p 'test_capacity_analysis.py' -v
 ```
 
-Tests use fictional nodes, labels, and sealed five-seed results. They cover node-list expansion, capacity/model schemas, unknown and anomalous mappings, string identifiers, integrity verification, and the complete five-seed analysis. Passing these tests does not reproduce the manuscript's production accuracy. The optional check against real sealed results requires explicitly setting `HARDWARE_REAL_SMOKE=1` and `STUDY_ROOT`; no production results are read by default.
+Tests use fictional nodes, labels, and sealed five-seed results. They cover node-list expansion, capacity/model schemas, unknown and anomalous mappings, string identifiers, integrity verification, and the complete five-seed analysis. Passing these tests verifies the workflow, not production accuracy. The optional check against real sealed results requires explicitly setting `HARDWARE_REAL_SMOKE=1` and `STUDY_ROOT`; no production results are read by default.

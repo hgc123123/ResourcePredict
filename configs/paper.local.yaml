@@ -204,7 +204,7 @@ xgboost:
   n_jobs: 8
 
 qwen:
-  # Final-manuscript protocol: reserve a chronological training tail for selection.
+  # Independent checkpoint protocol: reserve a chronological training tail for selection.
   base_selection:
     mode: train_tail
     fit_fraction: 0.90

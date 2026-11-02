@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Export current-protocol manuscript tables and figures from computed results.
+"""Export evaluation tables and figures from computed results.
 
 No model fitting, policy selection, or historical result substitution occurs.
 The help and dry-run paths need only Python's standard library.

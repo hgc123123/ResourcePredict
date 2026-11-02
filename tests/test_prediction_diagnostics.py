@@ -10,7 +10,7 @@ from uuid import uuid4
 import numpy as np
 import pandas as pd
 
-from analysis.reviewer_diagnostics import (
+from analysis.prediction_diagnostics import (
     EMPTY_KEY, align_predictions, boolean, cluster_labels, enrich, frozen_operation,
     holm_adjust, lru_replay, make_jobs, metrics, named_rng, paired_bootstrap,
     parse_args, probability_diagnostics, read_predictions, read_run, risk_metrics, run_diagnostics,
@@ -22,7 +22,7 @@ from analysis.reviewer_diagnostics import (
 def temporary_directory():
     # Some Windows file permissions prevent reopening tempfile's mode-0700 dirs.
     # A unique directory with inherited workspace ACLs remains portable.
-    root = Path(__file__).resolve().parent/('_reviewer_test_'+uuid4().hex)
+    root = Path(__file__).resolve().parent/('_prediction_test_'+uuid4().hex)
     root.mkdir()
     try:
         yield root

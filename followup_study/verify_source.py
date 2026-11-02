@@ -1,4 +1,4 @@
-"""Verify this supplement's source files without dependencies or shell quoting."""
+"""Verify the routing and calibration source files without dependencies or shell quoting."""
 from __future__ import annotations
 import hashlib
 import argparse

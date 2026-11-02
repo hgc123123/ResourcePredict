@@ -2,10 +2,10 @@
 import unittest
 import pandas as pd
 
-from scripts.prepare_reviewer_windows import prefix_size, window_labels
+from scripts.prepare_temporal_windows import prefix_size, window_labels
 
 
-class ReviewerWindowTests(unittest.TestCase):
+class TemporalWindowTests(unittest.TestCase):
     def times(self):
         return pd.Series(pd.date_range("2026-01-01", periods=20, freq="h", tz="UTC"))
 

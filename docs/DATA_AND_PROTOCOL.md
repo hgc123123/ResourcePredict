@@ -2,9 +2,9 @@
 
 ## External inputs and identity
 
-The production trace is private and contains executable user scripts. It is not shipped, downloaded, or synthesized from paper tables by this release. Production training requires the original CSV and a local Qwen2.5-Coder-1.5B-Instruct directory; hardware slicing additionally requires the site's capacity/type registries.
+The production trace is private and contains executable user scripts. It is not included or downloaded by this project. Production training requires the original CSV and a local Qwen2.5-Coder-1.5B-Instruct directory; hardware stratification additionally requires the site's capacity/type registries.
 
-Paper-mode CSV SHA-256: `7967f923899dbad19ab79416bdfd999ca5174e1dd4086d0a97fa43296a8379cf`.
+Reference-study CSV SHA-256: `7967f923899dbad19ab79416bdfd999ca5174e1dd4086d0a97fa43296a8379cf`.
 
 Effective split fingerprint: `85d00ce3a9fb6fe39e1be66ff91169daad85d7b217bc0b971c6dd251d845e3ce`.
 
@@ -28,7 +28,7 @@ The loader validates finite in-range labels and resource applicability under its
 
 ## Sampled-peak target meaning
 
-The final manuscript describes a **10-second sampling interval**. Experiment code consumes the exported ratio labels; it does not regenerate historical Prometheus samples or prove scrape completeness. `configs/telemetry_contract.json` records this distinction.
+The target specification uses a **10-second sampling interval**. Experiment code consumes the exported ratio labels; it does not regenerate historical Prometheus samples or independently verify scrape completeness. `configs/telemetry_contract.json` records this distinction.
 
 For memory, let `A_j` be total job-allocated memory from Slurm AllocTRES, `N_j` the allocated node count, and `P_j` the maximum observed node usage over valid samples and nodes. The target is `N_j * P_j / A_j`. Under equal allocated memory per node this is the largest observed per-node ratio. It is not a reconstructed simultaneous aggregate memory demand. Numerator and denominator must be in consistent units.
 
@@ -62,4 +62,4 @@ Paired bootstrap conditions on frozen predictions and resamples submission days,
 
 Signed error is prediction minus target. Positive shortfall is `max(target - prediction, 0)` with zeros retained for other valid jobs. High utilization is target ≥.8. Additive margins are prespecified normalized-ratio diagnostics. Joint calibrated shortfall means that at least one applicable resource exceeds its bound. A unit bound is the normalized upper bound 1, not demonstrated useful physical capacity savings.
 
-Recorded request features are legitimate submission-time predictors, but retrospective utilization prediction under those requests does not identify the effect of changing them. This release supports the paper's single-cluster retrospective study and local serial prediction-path measurements; it does not establish OOM probabilities, safe allocation, resource savings under a scheduler, untouched future-period confirmation, or cross-cluster generalization.
+Recorded request features are legitimate submission-time predictors, but retrospective utilization prediction under those requests does not identify the effect of changing them. The implemented evaluations cover a single-cluster retrospective study and local serial prediction-path measurements; they do not establish OOM probabilities, safe allocation, resource savings under a scheduler, untouched future-period confirmation, or cross-cluster generalization.

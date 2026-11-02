@@ -46,7 +46,7 @@ def window_labels(fractions):
 def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--config", required=True, help="Prepared strict arm config from the main study")
-    p.add_argument("--output-root", default="outputs/reviewer_rolling")
+    p.add_argument("--output-root", default="outputs/temporal_windows")
     p.add_argument("--fractions", type=float, nargs="+", default=[0.60, 0.80, 1.0])
     a = p.parse_args(argv)
     from common.config import load_config, set_value, resolved_serializable_config, get_value
@@ -114,11 +114,11 @@ def main(argv=None):
                "uses_error_or_target_for_window_selection": False}
         records.append(rec)
         print(json.dumps(rec, ensure_ascii=True))
-        print(f"Run scripts/run_reviewer_experiments.py --config {cfg_path} --data-csv {data_path} --output-root {folder / 'study'} --seeds 42 --stage all")
+        print(f"Run scripts/run_prediction_experiments.py --config {cfg_path} --data-csv {data_path} --output-root {folder / 'study'} --seeds 42 --stage all")
     for left, right in zip(records, records[1:]):
         if left["test_end"] >= right["test_start"]:
             raise ValueError("Chosen prefixes yield overlapping test intervals; revise fractions before training")
-    (out / "windows.json").write_text(json.dumps({"schema": "reviewer-prefix-windows/v1", "windows": records,
+    (out / "windows.json").write_text(json.dumps({"schema": "temporal-prefix-windows/v1", "windows": records,
         "interpretation": "Expanding-prefix rolling-origin sensitivity with disjoint test periods; not independent clusters."},
         indent=2), encoding="utf-8")
     return 0

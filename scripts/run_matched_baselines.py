@@ -24,7 +24,7 @@ from baseline_study.protocol import (MODELS, SCHEMA, digest, load_primary,
 
 def parse_args(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--reference-study", default="outputs/reviewer_20261021")
+    parser.add_argument("--reference-study", default="outputs/prediction_study")
     parser.add_argument("--output-root", default="outputs/baselines_train_tail_20261023")
     parser.add_argument("--config", help="Default: reference-study/protocol/train_tail.yaml")
     parser.add_argument("--data-csv", default=os.environ.get("JOB_EFFICIENCY_CSV"))

@@ -1,1 +1,1 @@
-"""Source-only manuscript reporting for the independent checkpoint protocol."""
+"""Source-only evaluation reporting for the independent checkpoint protocol."""

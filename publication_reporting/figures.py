@@ -1,4 +1,4 @@
-"""Data-driven vector plots for manuscript Figs. 2-9.
+"""Data-driven vector plots for the evaluation results.
 
 Plots use only aggregate CSVs. No archived numerical values or private paths are
 embedded in the drawing code. Figure data are saved beside SVG/PDF/300-dpi PNG.
@@ -22,7 +22,7 @@ def make_figures(a, read, out, missing):
     try:
         import matplotlib
     except ImportError as exc:
-        raise RuntimeError("Install requirements-reviewer.txt for vector plots, or use --no-figures for aggregate tables.") from exc
+        raise RuntimeError("Install requirements-analysis.txt for vector plots, or use --no-figures for aggregate tables.") from exc
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
     import matplotlib.dates as mdates

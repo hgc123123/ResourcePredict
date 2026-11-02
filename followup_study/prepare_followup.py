@@ -43,7 +43,7 @@ def prepare_one(args,seed,variant):
     data_path=Path(config['data']['path'])
     if not data_path.is_file():
         raise FileNotFoundError(f'Private CSV missing; supply --data-csv: {data_path}')
-    request=dict(stage='prepare',schema='reviewer-followup/v1',seed=seed,variant=variant,
+    request=dict(stage='prepare',schema='routing-calibration-study/v1',seed=seed,variant=variant,
         input_sha256={str(p):sha(p) for p in (base/'config.resolved.yaml',base/'predictions.csv',base/'run_manifest.json',last/'predictions.csv',last/'run_manifest.json',split_path)},
         data_sha256=sha(data_path),fit_fraction=args.fit_fraction,selection_end=args.selection_end,
         source_sha256=source_inventory(project),new_base_training=False,

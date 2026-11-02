@@ -52,7 +52,7 @@ def atomic_json(path: Path, value: Any) -> None:
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--study-root", required=True, help="Completed reviewer study root containing train_tail/")
+    parser.add_argument("--study-root", required=True, help="Completed prediction study root containing train_tail/")
     parser.add_argument("--output-root", required=True, help="A new directory reserved for this timing study")
     parser.add_argument("--seeds", nargs="+", type=int, default=[40, 41, 42, 43, 44])
     parser.add_argument("--repeats", type=int, default=3, help="Technical repeats per seed and case; not additional training seeds")

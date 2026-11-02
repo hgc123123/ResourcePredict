@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Portable fixed-prediction reviewer diagnostics (numpy/pandas only).
+"""Portable fixed-prediction diagnostics (numpy/pandas only).
 
 This program never fits a model or selects a policy. It deliberately refuses
 misaligned populations, different dataset/split contracts, and inconsistent
@@ -711,7 +711,7 @@ def run_diagnostics(args: argparse.Namespace) -> dict:
             path = out/(name+"_summary.csv")
             result.to_csv(path,index=False)
             inventory[path.name] = {"rows":len(result),"sha256":sha256(path)}
-    result = {"schema":"reviewer-fixed-prediction-diagnostics/v1","created_utc":datetime.now(timezone.utc).isoformat(),
+    result = {"schema":"fixed-prediction-diagnostics/v1","created_utc":datetime.now(timezone.utc).isoformat(),
         "seeds":args.seeds,"variants":args.variants,"split":args.split,"bootstrap_replicates":args.bootstrap_replicates,
         "bootstrap_seed":args.bootstrap_seed,"confidence_level":args.confidence_level,"block_timezone":args.block_timezone,
         "clusters":args.clusters,"delta_definition":"proposed minus reference","summary_sd":"sample standard deviation, ddof=1",

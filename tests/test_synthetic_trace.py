@@ -13,7 +13,7 @@ import pandas as pd
 from common.config import load_config
 from common.data import load_dataset
 from scripts.make_synthetic_trace import generate_synthetic_trace, synthetic_rows
-from scripts.smoke_reviewer_pipeline import run_smoke
+from scripts.smoke_prediction_pipeline import run_smoke
 
 
 class TestSyntheticTrace(unittest.TestCase):
@@ -118,7 +118,7 @@ class TestSyntheticTrace(unittest.TestCase):
                 synthetic_rows(count)
 
     def test_new_study_prepare_freezes_roles_and_population_without_training(self):
-        from scripts.run_reviewer_experiments import parse_args, prepare
+        from scripts.run_prediction_experiments import parse_args, prepare
         generated = generate_synthetic_trace(self.root / "study_source", template_config=self.template, count=200)
         model = self.root / "EMPTY_MODEL_PATH_ONLY_NOT_TRAINING"
         model.mkdir()

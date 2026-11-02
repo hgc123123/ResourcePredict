@@ -1,24 +1,32 @@
-# Source provenance and changes
+# Source organization and provenance
 
-This is a standalone source release assembled from the existing experiment implementations. Historical source directories and their experimental outputs were not modified.
+ResourcePredict integrates training, chronological replay, prediction diagnostics, and serving benchmarks in a standalone source distribution. Runtime execution uses this repository and authorized external inputs; it does not depend on the original development directories.
 
-| Release location | Existing source | Scope |
+| Location | Source collection | Function |
 |---|---|---|
-| `common`, `qwen`, `last-1`, `hybrid`, `reliability_cascade`, `analysis`, `baseline_study`, `online_study` | `20261021/reviewer_experiments/` | Dataset/replay, model training, revised checkpoint selection, comparative fitting, diagnostics, matched baselines and measured live inference |
-| Other baseline/fusion modules, configs, tests and Python utilities | `20261021/reviewer_experiments/` | Dependencies and experiment utilities retained with tested APIs |
-| `followup_study/` | `20261021/reviewer_followup_20261023/` | Equal-budget routing and independent calibration; paths adapted to integrated release |
-| `hardware_study/` | `20261021/reviewer_hardware_20261023/` | Capacity/type strata; external registries replace local node inventories; synthetic schema examples only |
-| `scripts/run_publication_experiments.py`, release Slurm scripts | Added for this release | Final-protocol orchestration, explicit seeds/batches, independent stages |
-| `scripts/export_primary_exact_bypass.py` | Added for this release | Frozen classifier-free primary export with zero-threshold and prediction/route equivalence assertions |
-| `publication_reporting/`, `scripts/report_publication_results.py` | Added for this release | Parameterized aggregate tables, data-backed figures, missing-input and provenance checks |
-| Release documentation, license, provenance and checksum tools | Added/adapted for this release | Portable instructions and auditable source-only packaging |
+| `common/`, `qwen/`, `last-1/`, `hybrid/`, `reliability_cascade/`, `analysis/`, `baseline_study/`, `online_study/` | `prediction-experiments` | Data processing, history replay, model training, independent checkpoint selection, cascade fitting, evaluation, and serial inference |
+| Other baseline modules, configuration, tests, and execution utilities | `prediction-experiments` | Shared model interfaces and experiment support |
+| `followup_study/` | `routing-calibration` | Equal-budget routing comparisons and independent residual calibration |
+| `hardware_study/` | `hardware-analysis` | Capacity and device-model stratification using external registries |
+| `scripts/run_publication_experiments.py`, Slurm entry points | Project integration | Experiment orchestration, explicit seed and batch settings, and independent execution stages |
+| `scripts/export_primary_exact_bypass.py` | Project integration | Frozen classifier-free export with threshold, prediction, and routing equivalence checks |
+| `publication_reporting/`, `scripts/report_publication_results.py` | Project integration | Aggregate tables, figures, input-completeness checks, and export verification |
+| Documentation and source-inventory tools | Project integration | Installation, protocol reference, source provenance, and distribution integrity |
 
-The primary config uses independent train-tail checkpoint selection. Its original preprocessing/architecture/hyperparameter settings are retained; the official entry point explicitly uses 3 × 2 × 2 training batches for Full and No-Code. Conventional baselines retain their own model-specific settings and share the new optimization/early-stopping sample roles.
+Collection identifiers are logical provenance labels, not filesystem paths. `SOURCE_PROVENANCE.json` records each file's current SHA-256 digest and, where available, its original digest and source collection. It distinguishes unchanged copies, adapted files, and files introduced during integration. Original digests are retained when modules are renamed. `scripts/build_release_provenance.py --baseline-provenance SOURCE_PROVENANCE.json` refreshes current digests without discarding those recorded origins.
 
-The primary export applies the existing `online_study` exact-bypass rule to frozen offline artifacts. It does not refit, use targets for routing, alter No-Code, or copy a different route's cache/forward counters. Paper-mode export fails if the new Full run does not reproduce the manuscript's zero-threshold simplification.
+## Experiment settings
 
-Historical result constants, old acceptance-table scripts, their obsolete tests, old dataset example configs, and six/eight-GPU batch-24/32 Slurm workflows were excluded. The lower-level matrix runner's process default is also aligned to three. Test fixtures were adapted for pandas-3 dtype behavior, correct detection of the external XGBoost distribution, platform-independent byte counts, and nested checksum inventories; model algorithms were not changed by those fixture fixes. No private trace, original executable scripts, trained weights, real node registries or historical results were copied. The target contract records the final manuscript's 10-second description without asserting recovery of historical sample-level telemetry or a complete original aggregation lineage.
+The primary configuration reserves a chronological training tail for checkpoint selection. Full and No-Code use three processes, batch size two per process, and two gradient-accumulation steps, for an effective batch size of twelve. Conventional baselines use the same optimization and early-stopping samples with their own model-specific settings.
 
-`SOURCE_PROVENANCE.json` records per-file original and release hashes, distinguishing unchanged copies, adapted files and new files. Source roots are represented by relative provenance names; execution does not access those directories. `SOURCE_SHA256SUMS.txt` records the final release content. Generated test caches, run artifacts and archives are excluded from both source packaging and public input materials.
+The primary export applies the `online_study` exact-history bypass rule to frozen offline artifacts. Export verification requires zero reference thresholds and equivalent predictions and routing decisions. Cache-hit and encoder-forward counters are measured separately because they depend on the executed routing and caching operations.
 
-Dependencies and Qwen model weights remain subject to their upstream licenses; the repository's MIT license covers project source, not the private trace or external third-party weights. The recorded source audit does not retroactively supply missing pretrained-weight provenance from historical primary runs. New runtime/model inventories can be captured with `scripts/capture_environment.py`.
+Run inventories bind outputs to their source code, inputs, and configuration. Use a new output root after modifying code or configuration; existing studies must retain their original inventories.
+
+## Distribution boundaries
+
+`SOURCE_SHA256SUMS.txt` verifies the distributed source files. Source archives exclude version-control metadata, generated caches, runtime outputs, private traces, executable user scripts, trained weights, and production hardware registries. Synthetic examples demonstrate input schemas and workflow behavior without representing production records.
+
+The telemetry contract describes sampled-peak targets and the limits of the retained job-level export; it does not reconstruct raw monitoring streams. Source checksums establish file identity, not experimental correctness or historical pretrained-weight provenance. `scripts/capture_environment.py` can record the software and model inventories for a new run.
+
+The [MIT License](LICENSE) covers project source. External data, models, and dependencies retain their own access conditions and licenses.

@@ -20,13 +20,13 @@ Complete the relevant experiments before aggregating results. Input directories 
 | `--online-root` | `outputs/online` | Measured serial conditional inference and bounded LRU caching |
 | `--output-dir` | `outputs/publication` | Output tables, figures, and evidence index |
 
-`--help` and `--dry-run` use only the Python standard library and require no private data, model, or completed results. Aggregation requires pandas and NumPy; plotting additionally requires Matplotlib from `requirements-reviewer.txt`. Use `--no-figures` to produce tables only. Missing inputs are listed in `report_manifest.json` and the output `README.md`; historical manuscript values are not substituted for missing results. `--require-complete` returns a nonzero status when required inputs are missing.
+`--help` and `--dry-run` use only the Python standard library and require no private data, model, or completed results. Aggregation requires pandas and NumPy; plotting additionally requires Matplotlib from `requirements-analysis.txt`. Use `--no-figures` to produce tables only. Missing inputs are listed in `report_manifest.json` and the output `README.md`; reported-result constants are not substituted for missing results. `--require-complete` returns a nonzero status when required inputs are missing.
 
 The reporter reads numerical summaries. Each experiment's own entry point must first verify data identity, artifact integrity, and training-role assignments. Metrics use resource-valid masks and job weighting. Cross-seed standard deviations in figures are distinguished from confidence intervals.
 
 ## Table and figure map
 
-| Manuscript item | Exported content |
+| Report item | Exported content |
 |---|---|
 | Table 1 | Resource-label eligibility and chronological split composition |
 | Table 2 | Model, training, and routing settings from the resolved `protocol/train_tail.yaml`, with path fields omitted |
@@ -45,7 +45,7 @@ The reporter reads numerical summaries. Each experiment's own entry point must f
 | Fig. 8 | Prespecified additive margins and sampled-peak shortfall rates |
 | Fig. 9 | Measured serial prediction-path latency, live batch-one MAE, and encoder forwards |
 
-Figures are exported as SVG, PDF, and 300-dpi PNG, together with the aggregate CSV data used for plotting. They preserve the numerical inputs and statistical definitions, but need not match the typeset manuscript artwork pixel for pixel. Missing results remain missing rather than being drawn as complete curves.
+Figures are exported as SVG, PDF, and 300-dpi PNG, together with the aggregate CSV data used for plotting. They preserve the numerical inputs and statistical definitions, while their layout may differ from typeset versions. Missing results are identified explicitly and omitted from curves.
 
 The primary Full path uses exact-history eligibility without evaluating a learned pre-inference classifier. Before reporting Full as the primary method, the reporter verifies five-seed export manifests, frozen source hashes, and prediction/route equivalence, then aggregates the primary exports. Without this evidence, the case is labelled as a classifier reference and treated as missing in strict mode. Failed verification stops aggregation. No-Code, temporal windows, and residual calibration retain their own adaptive-policy scopes and are reported separately.
 

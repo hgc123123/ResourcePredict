@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Read-only capacity-stratified evaluation of the sealed primary reviewer study.
+"""Read-only capacity-stratified evaluation of the sealed primary prediction study.
 
 No model fitting, policy selection, target normalization, or GPU use occurs here.
-The existing reviewer_diagnostics.py supplies integrity checks and paired metrics.
+The existing prediction_diagnostics.py supplies integrity checks and paired metrics.
 """
 from __future__ import annotations
 
@@ -40,10 +40,10 @@ def digest(path: Path) -> str:
 
 
 def load_diagnostics(project: Path):
-    path = project / "analysis/reviewer_diagnostics.py"
+    path = project / "analysis/prediction_diagnostics.py"
     if not path.is_file():
-        raise FileNotFoundError(f"Reviewer analysis source not found: {path}")
-    spec = importlib.util.spec_from_file_location("capacity_reviewer_diagnostics", path)
+        raise FileNotFoundError(f"Prediction analysis source not found: {path}")
+    spec = importlib.util.spec_from_file_location("capacity_prediction_diagnostics", path)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module, path

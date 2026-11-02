@@ -1,8 +1,8 @@
 {
   "schema": "sampled-peak-target-contract/v1",
-  "scope": "Author-described final manuscript target semantics; not a reconstruction of raw telemetry",
+  "scope": "Sampled-peak target definitions; not a reconstruction of raw telemetry",
   "sampling_interval_seconds": 10,
-  "sampling_interval_source": "Final manuscript Section 3.3; historical per-sample scrape configuration is not supplied",
+  "sampling_interval_source": "Study target specification; historical per-sample scrape configuration is not supplied",
   "memory": {
     "formula": "node_count * maximum_observed_node_usage / total_job_allocated_memory",
     "denominator": "Total job-allocated memory from Slurm AllocTRES",

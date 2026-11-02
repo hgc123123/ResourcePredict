@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Create/check the reviewer source inventory without including run artifacts."""
+"""Create or verify the source inventory without including run artifacts."""
 from __future__ import annotations
 
 import argparse
@@ -56,7 +56,7 @@ def main(argv=None):
     if a.archive:
         archive = a.archive.resolve()
         archive.parent.mkdir(parents=True, exist_ok=True)
-        # Exclusive creation protects an existing review/upload archive.
+        # Exclusive creation protects an existing source archive.
         with ZipFile(archive, "x", compression=ZIP_DEFLATED) as output:
             for path in [*files, MANIFEST]:
                 output.write(path, arcname="20261026/" + path.relative_to(ROOT).as_posix())

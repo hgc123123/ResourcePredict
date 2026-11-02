@@ -82,7 +82,7 @@ def primary_predictions(reference, *, require_equivalence: bool = False):
     if require_equivalence and not (zero_thresholds and predictions_equal and routes_equal):
         raise ValueError(
             "Paper-mode equivalence failed: the frozen Full reference does not reproduce "
-            "the manuscript's zero-threshold primary path. Preserve this run and report "
+            "the zero-threshold primary path. Preserve this run and report "
             f"its new policy separately. Audit: {report}"
         )
 

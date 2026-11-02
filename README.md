@@ -2,7 +2,7 @@
 
 Source code for **History-First Fusion for Sampled-Peak System and GPU Memory Utilization Prediction in HPC Clusters**.
 
-ResourcePredict implements the independent-checkpoint experiments, the primary exact-history bypass method, adaptive-routing comparisons, and the reported evaluation studies. It runs independently of the historical source directories. Production traces, executable user scripts, trained weights, and historical result files are not included.
+ResourcePredict provides training, causal history replay, inference, and evaluation tools for sampled-peak system-memory and GPU-memory utilization prediction. It includes the primary exact-history bypass method, adaptive-routing comparisons, and statistical and runtime analyses. Production traces, executable user scripts, trained weights, and production result files are not included.
 
 ## Method and evaluation protocol
 
@@ -11,7 +11,7 @@ ResourcePredict implements the independent-checkpoint experiments, the primary e
 - **Primary experiments:** seeds 40-44; Full and No-Code use three processes, batch size 2 per process, and two gradient-accumulation steps, giving effective batch size 12. The outer chronological split is 80/10/10. Base training and checkpoint selection use separate blocks within the outer training period. The outer validation period is divided approximately 70/30 for lightweight model fitting and policy selection, followed by freezing.
 - **Additional studies:** temporal retraining retains independently selected adaptive policies. Residual calibration uses a separate 70/15/15 validation split. These studies are reported separately from the primary method.
 
-The classifier-equipped Full engine fits the history experts and post-inference models and supplies the classifier comparison. The `primary-export` stage then exports the classifier-free rule from frozen Full artifacts, checking zero thresholds and exact prediction/route equivalence. A newly trained Full run that fails these checks cannot be exported in paper mode. No-Code retains its own selected policies. The live primary path is implemented by the `exact_bypass` operation in `online_study`.
+The classifier-equipped Full engine fits the history experts and post-inference models and supplies the classifier comparison. The `primary-export` stage exports the classifier-free rule from frozen Full artifacts after checking zero thresholds and exact prediction/route equivalence. Export under the configured study protocol requires these checks to pass. No-Code retains its independently selected policies. The live primary path is implemented by the `exact_bypass` operation in `online_study`.
 
 See [docs/EXPERIMENTS.md](docs/EXPERIMENTS.md) for the experiment map and [docs/DATA_AND_PROTOCOL.md](docs/DATA_AND_PROTOCOL.md) for the schema, targets, and chronological roles.
 
@@ -22,7 +22,7 @@ Linux and Python 3.12 are recommended. Install a CUDA-compatible PyTorch build f
 ```bash
 python -m venv .venv
 source .venv/bin/activate
-python -m pip install -r requirements-paper.txt -r requirements-reviewer.txt
+python -m pip install -r requirements-paper.txt -r requirements-analysis.txt
 python scripts/build_source_manifest.py --syntax-check
 python scripts/run_publication_experiments.py --stage all --dry-run
 python -m pytest tests
@@ -47,7 +47,7 @@ mkdir -p logs
 
 Base training requires the first two inputs. Hardware stratification also requires the capacity and model registries. Their schemas are documented in [hardware_study/README.md](hardware_study/README.md). The example registries contain fictional nodes and are intended only for schema and workflow checks. Models are loaded locally and are not downloaded automatically.
 
-`configs/paper.local.yaml` checks the paper trace's CSV SHA-256, row counts, and split fingerprints. Reproducing production results requires authorized access to the original inputs. Experiments on another trace require a separate configuration and newly established data and split identities; they are new experiments, rather than reproductions of the reported numbers.
+`configs/paper.local.yaml` verifies the production trace's CSV SHA-256, row counts, and split fingerprints. Reproducing production results requires authorized access to the original inputs. Experiments on another trace require a separate configuration and newly established data and split identities; they constitute a separate study.
 
 ## Running the experiments
 
@@ -83,7 +83,7 @@ python scripts/run_publication_experiments.py --stage report --resume
 
 With all dependencies and external inputs available, `--stage all --resume` executes the production stages serially. The default output root is `outputs/`. Use the same `--output-root` throughout a study. Completed hardware analysis is reused only after its inputs, source, configuration, and outputs pass verification; incomplete or changed results require a new output directory.
 
-The `report` stage produces aggregate data for Tables 1-8 and Figs. 2-9, with CSV, SVG, PDF, and 300-dpi PNG output. It does not create the architecture illustration or edit the manuscript. Figures preserve the input values and statistical definitions, but need not match the manuscript artwork pixel for pixel. Missing experiments are listed and cause a nonzero exit status. Primary-method reporting also requires successful export provenance checks. Per-job predictions, derived data, and checkpoints remain within the output root and are not included in the source distribution.
+The `report` stage produces aggregate data for Tables 1-8 and Figs. 2-9, with CSV, SVG, PDF, and 300-dpi PNG output. It exports numerical tables and experimental plots; the architecture illustration is outside its scope. Figures preserve the input values and statistical definitions, while their layout may differ from typeset versions. Missing experiments are listed and cause a nonzero exit status. Primary-method reporting also requires successful export provenance checks. Per-job predictions, derived data, and checkpoints remain within the output root and are not included in the source distribution.
 
 ## Slurm submission
 
@@ -113,7 +113,7 @@ Stages have different resource requirements, so a single-GPU allocation is insuf
 
 ## Source scope and reproducibility
 
-Core modules include `common/`, `qwen/`, `last-1/`, `hybrid/`, `reliability_cascade/`, `baseline_study/`, `analysis/`, `followup_study/`, `hardware_study/`, and `online_study/`. Earlier generic experiment utilities remain for API compatibility. The documented entry point defines the manuscript protocol. Historical result constants, acceptance tables, and obsolete Slurm workflows are excluded.
+Core modules include `common/`, `qwen/`, `last-1/`, `hybrid/`, `reliability_cascade/`, `baseline_study/`, `analysis/`, `followup_study/`, `hardware_study/`, and `online_study/`. General experiment utilities are retained for API compatibility. The documented entry point defines the supported study protocol. Production result constants and obsolete workflows are excluded.
 
 [SOURCE_MAP.md](SOURCE_MAP.md) describes the source origins and adaptations. `SOURCE_PROVENANCE.json` records per-file source hashes, and `SOURCE_SHA256SUMS.txt` verifies release integrity. Checksums establish file identity, not experimental correctness. See [docs/VALIDATION.md](docs/VALIDATION.md) for the validation scope.
 

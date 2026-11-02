@@ -1,1 +1,1 @@
-"""Supplementary live-path measurements; frozen training modules stay unchanged."""
+"""Serial prediction-path benchmarks using frozen trained models."""

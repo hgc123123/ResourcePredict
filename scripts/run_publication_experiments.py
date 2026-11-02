@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Canonical entry point for the final manuscript's experiments (code-only release).
+"""Run the ResourcePredict training and evaluation workflows.
 
 Planning needs only Python's standard library. Real runs require the external
 trace/model; hardware stratification additionally requires external registries.
@@ -59,7 +59,7 @@ def optional(cmd, option, value):
 
 
 def core_command(a, stage, *, config=None, study=None, data=None, seeds=SEEDS):
-    cmd = command("scripts/run_reviewer_experiments.py", "--config", config or a.config,
+    cmd = command("scripts/run_prediction_experiments.py", "--config", config or a.config,
                   "--output-root", study or a.output_root / "study", "--stage", stage,
                   "--arms", "train_tail", "--seeds", *seeds, "--variants", "full", "no_code",
                   "--num-processes", 3, "--batch-size", 2, "--eval-batch-size", 4,
@@ -101,7 +101,7 @@ def hardware_complete(a, study):
                 "capacity_map_sha256": file_digest(a.capacity_map), "model_map_sha256": file_digest(a.model_map),
                 "external_registry_provenance_sha256": file_digest(a.registry_provenance) if a.registry_provenance else None,
                 "analysis_source_sha256": file_digest(ROOT / "hardware_study/run_capacity_analysis.py"),
-                "reused_diagnostics_source_sha256": file_digest(ROOT / "analysis/reviewer_diagnostics.py"),
+                "reused_diagnostics_source_sha256": file_digest(ROOT / "analysis/prediction_diagnostics.py"),
                 "historical_mapping_confirmed_by_author": False, "capacity_unit": "as registered"}
     if any(report.get(key) != value for key, value in expected.items()):
         raise ValueError("Existing hardware analysis has different inputs/code/settings; use a new output root")
@@ -165,7 +165,7 @@ def execute_stage(a, stage):
         if a.resume and manifest.is_file() and not a.dry_run:
             rows = json.loads(manifest.read_text(encoding="utf-8"))["windows"]
             if [r["fraction"] for r in rows] != [.6, .8, 1.]:
-                raise ValueError("Existing window fractions differ from the manuscript")
+                raise ValueError("Existing window fractions differ from the study protocol")
             identity = json.loads((study / "protocol/data_identity.json").read_text(encoding="utf-8"))
             if any(r["source_data_sha256"] != identity["data_sha256"] for r in rows):
                 raise ValueError("Existing windows belong to a different source trace")
@@ -173,7 +173,7 @@ def execute_stage(a, stage):
                 temporal_inputs(a, r["window"])
             print("[SKIP] Existing window identities verified")
         else:
-            run(a, command("scripts/prepare_reviewer_windows.py", "--config", study / "protocol/train_tail.yaml",
+            run(a, command("scripts/prepare_temporal_windows.py", "--config", study / "protocol/train_tail.yaml",
                            "--output-root", out / "temporal", "--fractions", .6, .8, 1.))
     elif stage in TEMPORAL:
         label = "prefix_" + stage.split("-")[1]
@@ -221,7 +221,7 @@ def execute_stage(a, stage):
             cmd.append("--overwrite")
         run(a, cmd)
     elif stage == "smoke":
-        run(a, command("scripts/smoke_reviewer_pipeline.py", "--output-dir", out / "synthetic_smoke",
+        run(a, command("scripts/smoke_prediction_pipeline.py", "--output-dir", out / "synthetic_smoke",
                        "--template-config", a.config, "--fit-gates"))
     else:
         raise ValueError(stage)

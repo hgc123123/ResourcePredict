@@ -22,7 +22,7 @@ CAUTIONS = [
     "Residual calibration uses a separate 70/15/15 validation partition, not the primary 70/30 partition.",
     "Online accuracy is measured batch-one accuracy; P95/P99 average within-run percentiles.",
     "Sampled-ratio shortfalls are not OOM probabilities, allocation guarantees, or physical savings.",
-    "Generated figures preserve numerical inputs but are not pixel-identical manuscript artwork.",
+    "Generated figures preserve numerical inputs and statistical definitions.",
 ]
 
 
@@ -281,7 +281,7 @@ def run(a):
                 "primary_equivalence_verified": primary_verified,
                 "environment": {"python": sys.version, "numpy": np.__version__, "pandas": pd.__version__}}
     (out / "report_manifest.json").write_text(json.dumps(manifest, indent=2, ensure_ascii=False, allow_nan=False) + "\n", encoding="utf-8")
-    lines = ["# Manuscript evidence index", "", *["- " + value for value in CAUTIONS], "",
+    lines = ["# Evaluation results index", "", *["- " + value for value in CAUTIONS], "",
              "The index records only files found at the requested roots. Missing experiments are listed explicitly; no paper values are substituted.", "",
              "| Generated artifact | Rows | Scope |", "|---|---:|---|"]
     for name, item in outputs.items():

@@ -1,12 +1,12 @@
 #!/bin/bash
-#SBATCH --job-name=reviewer-followup
+#SBATCH --job-name=routing-calibration
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=64G
 #SBATCH --time=12:00:00
-#SBATCH --output=reviewer-followup-%j.out
-#SBATCH --error=reviewer-followup-%j.err
+#SBATCH --output=routing-calibration-%j.out
+#SBATCH --error=routing-calibration-%j.err
 
 set -euo pipefail
 TASK_FOLLOWUP="${FOLLOWUP_DIR:-${SLURM_SUBMIT_DIR:-$PWD}}"

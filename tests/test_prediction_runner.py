@@ -12,16 +12,16 @@ from types import SimpleNamespace
 import unittest
 from unittest.mock import patch
 
-from scripts.run_reviewer_experiments import (
+from scripts.run_prediction_experiments import (
     ROOT, archive_interrupted, base_steps, locked_json, parse_args,
     train_base,
 )
 
 
-class ReviewerRunnerTests(unittest.TestCase):
+class PredictionRunnerTests(unittest.TestCase):
     @contextmanager
     def tempdir(self):
-        parent = ROOT / "tests" / ".reviewer_tmp"
+        parent = ROOT / "tests" / ".prediction_tmp"
         parent.mkdir(exist_ok=True)
         # mkdir defaults also work in Windows sandboxes whose ACL handling is
         # incompatible with tempfile's owner-only creation mode.
@@ -48,7 +48,7 @@ class ReviewerRunnerTests(unittest.TestCase):
             # package. A conditional path insertion does not resolve this.
             env["PYTHONPATH"] = os.pathsep.join([str(foreign), str(ROOT)])
             result = subprocess.run(
-                [sys.executable, str(ROOT / "scripts/run_reviewer_experiments.py"),
+                [sys.executable, str(ROOT / "scripts/run_prediction_experiments.py"),
                  "--output-root", str(Path(tmp) / "study"), "--stage", "prepare", "--dry-run"],
                 cwd=tmp, env=env, capture_output=True, text=True,
             )
@@ -149,9 +149,9 @@ class ReviewerRunnerTests(unittest.TestCase):
                     called.append(command[0])
                     completed[command[0]] = True
                     next(x for x in plan if x.step_id == command[0]).output_dir.mkdir(parents=True, exist_ok=True)
-                with patch("scripts.run_reviewer_experiments.base_steps", return_value=plan), \
-                     patch("scripts.run_reviewer_experiments.completion_status", side_effect=lambda s: SimpleNamespace(complete=completed[s.step_id], reason="fixture")), \
-                     patch("scripts.run_reviewer_experiments.run", side_effect=fake_run):
+                with patch("scripts.run_prediction_experiments.base_steps", return_value=plan), \
+                     patch("scripts.run_prediction_experiments.completion_status", side_effect=lambda s: SimpleNamespace(complete=completed[s.step_id], reason="fixture")), \
+                     patch("scripts.run_prediction_experiments.run", side_effect=fake_run):
                     train_base(a, "train_tail")
                 self.assertEqual(called, expected)
 

@@ -1,6 +1,6 @@
 # Independent Calibration and Routing Attribution
 
-This directory contains two supplementary CPU studies reported separately in the manuscript: routing-rule comparisons under equal budgets and independent residual calibration. Both reuse frozen Full / No-Code base predictions from the primary study's independent training-tail checkpoint protocol. They refit lightweight adaptive gates and select policies without retraining Qwen.
+This module implements routing-rule comparisons under equal budgets and independent residual calibration. Both analyses run on CPU and reuse frozen Full / No-Code base predictions from the primary study's independent training-tail checkpoint protocol. They refit lightweight adaptive gates and select policies without retraining Qwen.
 
 This is an **adaptive-routing comparison under a 70% / 15% / 15% outer-validation protocol**. It differs from the simplified primary method, which uses a 70% / 30% validation protocol and bypasses inference based directly on exact-history eligibility. Results from this routing or calibration study must not replace primary-table results without identifying the protocol difference.
 
@@ -47,7 +47,7 @@ python followup_study/run_followup.py \
   --seeds 40 41 42 43 44 --variants full no_code --resume
 ```
 
-Alternatively, submit a CPU Slurm job from the release root. Select a partition appropriate to the site, for example by adding `--partition=your_cpu_partition`. If cluster modules are needed, set `EXPERIMENT_MODULES` before submission; the script does not automatically load modules from the authors' site.
+Alternatively, submit a CPU Slurm job from the release root. Select a partition appropriate to the site, for example by adding `--partition=your_cpu_partition`. If cluster modules are needed, set `EXPERIMENT_MODULES` before submission.
 
 ```bash
 export JOB_EFFICIENCY_CSV=/path/to/private/original.csv

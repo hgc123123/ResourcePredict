@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run a new reviewer study without reusing historical checkpoints/predictions.
+"""Run an independent prediction study with new checkpoints and predictions.
 
 Planning uses the standard library only. Data preparation and actual execution
 require the dependencies in requirements*.txt and the private source trace.
@@ -57,7 +57,7 @@ def locked_json(path: Path, payload: dict) -> None:
 def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--config", default=str(ROOT / "configs/paper.local.yaml"))
-    p.add_argument("--output-root", default="outputs/reviewer_20261023_reproduction")
+    p.add_argument("--output-root", default="outputs/prediction_study")
     p.add_argument("--data-csv", default=os.environ.get("JOB_EFFICIENCY_CSV"))
     p.add_argument("--model-path", default=os.environ.get("MODEL_DIR"))
     p.add_argument("--stage", choices=STAGES, default="all")
@@ -109,7 +109,7 @@ def base_steps(a: argparse.Namespace, arm: str):
 
 def request(a: argparse.Namespace) -> dict:
     return {
-        "schema": "reviewer-study/v1", "config_sha256": digest(a.config),
+        "schema": "prediction-study/v1", "config_sha256": digest(a.config),
         "source_sha256": inventory(), "source_config": str(a.config),
         "output_root": str(a.output_root), "data_csv": a.data_csv,
         "model_path": a.model_path, "arms": a.arms, "seeds": a.seeds,
@@ -311,7 +311,7 @@ def analyze(a: argparse.Namespace, arm: str) -> None:
     cfg, base, casc = arm_paths(a, arm)
     if not {"full", "no_code"}.issubset(a.variants):
         raise ValueError("Paired diagnostics require full and no_code; include both variants in the study")
-    cmd = [sys.executable, "analysis/reviewer_diagnostics.py", "--config", cfg, "--base-root", base,
+    cmd = [sys.executable, "analysis/prediction_diagnostics.py", "--config", cfg, "--base-root", base,
          "--cascade-root", casc, "--output-dir", a.output_root / arm / "analysis",
          "--population-index", a.output_root / "protocol" / "population_index.csv",
          "--seeds", *a.seeds, "--variants", "full", "no_code", "--max-tokens", 4096,
@@ -319,7 +319,7 @@ def analyze(a: argparse.Namespace, arm: str) -> None:
     if a.resume:
         cmd.append("--overwrite")
     run(cmd, a.dry_run)
-    run([sys.executable, "analysis/plot_reviewer_diagnostics.py", "--analysis-dir", a.output_root / arm / "analysis"], a.dry_run)
+    run([sys.executable, "analysis/plot_prediction_diagnostics.py", "--analysis-dir", a.output_root / arm / "analysis"], a.dry_run)
 
 
 def coverage(a: argparse.Namespace, arm: str) -> None:
@@ -336,7 +336,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     os.environ.setdefault("HF_HUB_OFFLINE", "1")
     os.environ.setdefault("TRANSFORMERS_OFFLINE", "1")
     if not a.dry_run:
-        locked_json(a.output_root / "reviewer_study_plan.json", request(a))
+        locked_json(a.output_root / "prediction_study_plan.json", request(a))
     if a.stage in ("prepare", "all"):
         prepare(a)
     for arm in a.arms:

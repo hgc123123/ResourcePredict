@@ -1,12 +1,12 @@
 {
-  "schema": "publication-source-provenance/v1",
-  "scope": "Source files only; original directories were not mutated; self and checksum inventory omitted",
+  "schema": "source-provenance/v2",
+  "scope": "Source files with original digests and neutral collection identifiers; self and root checksum inventory omitted",
   "files": [
     {
       "path": ".gitignore",
       "release_sha256": "4d9f2264149381b070bd2a32801f9c5db2f046c72e37dd0b3cf4ac0a30d41b00",
       "status": "adapted_copy",
-      "original_path": "20261021/reviewer_experiments/.gitignore",
+      "source_collection": "prediction-experiments",
       "original_sha256": "0a560f85d9949041b47ef696e7994683a92c2c9f4ed0b2ec5ee9927f7fad5e7e"
     },
     {
@@ -16,351 +16,351 @@
     },
     {
       "path": "README.md",
-      "release_sha256": "22f8dc436462eec2152ea70045cd7aad149d808b06f2ab7163d945f69c12f933",
+      "release_sha256": "4f65d171b733335a2988e78d3caad05573b0e9ee3c1bdcd2c2fed81c7bde6bcb",
       "status": "adapted_copy",
-      "original_path": "20261021/reviewer_experiments/README.md",
+      "source_collection": "prediction-experiments",
       "original_sha256": "11fdf8f075f3f2bb1f70ef46e05ad7dfedd72359755f320bdefcc2a4fd65fc12"
     },
     {
       "path": "SOURCE_MAP.md",
-      "release_sha256": "0963448e4799bc6235f2a3d9579fa8e55168a50f778e533fe2fb6bac91cee76b",
+      "release_sha256": "1f75366dfbb90f233c207a44da9f1e502fa900b2f93431f604e5648cd44a576a",
       "status": "adapted_copy",
-      "original_path": "20261021/reviewer_experiments/SOURCE_MAP.md",
+      "source_collection": "prediction-experiments",
       "original_sha256": "298442414c321ece9f980b33f066acd2e9953e9eb41f764777916c0971f90c86"
     },
     {
       "path": "ablation/run.py",
       "release_sha256": "0275d687622bb65c243e0e18dff1af405d8a28dd8ce35d923e4a2951a454fa88",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/ablation/run.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "0275d687622bb65c243e0e18dff1af405d8a28dd8ce35d923e4a2951a454fa88"
     },
     {
       "path": "analysis/cascade_subgroups.py",
       "release_sha256": "e0fe6f6152cec03e5e26e9c0c10ee956e9eeb85eec4b37c533b855a7a65c6953",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/analysis/cascade_subgroups.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "e0fe6f6152cec03e5e26e9c0c10ee956e9eeb85eec4b37c533b855a7a65c6953"
     },
     {
       "path": "analysis/history_stress.py",
       "release_sha256": "790200212c8aa2ee5494e21fcd196a6f93b88b9b96d8b7533dd020d78160aa03",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/analysis/history_stress.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "790200212c8aa2ee5494e21fcd196a6f93b88b9b96d8b7533dd020d78160aa03"
     },
     {
       "path": "analysis/hybrid_oracle.py",
       "release_sha256": "28c909ef30f62d014585e3801776d5f3360a730c89a5b8880eb49ba2b1491930",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/analysis/hybrid_oracle.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "28c909ef30f62d014585e3801776d5f3360a730c89a5b8880eb49ba2b1491930"
     },
     {
       "path": "analysis/hybrid_subgroups.py",
       "release_sha256": "ede5f061c1205eb8e83606cf31f46b58f4441394a21c41b0168e3b2eceefb79c",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/analysis/hybrid_subgroups.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "ede5f061c1205eb8e83606cf31f46b58f4441394a21c41b0168e3b2eceefb79c"
     },
     {
       "path": "analysis/paired_significance.py",
       "release_sha256": "0c37a90455384f5eb4a65501ed5ffe0e8b675ebefba8280bab5103933f019333",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/analysis/paired_significance.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "0c37a90455384f5eb4a65501ed5ffe0e8b675ebefba8280bab5103933f019333"
     },
     {
-      "path": "analysis/plot_reviewer_diagnostics.py",
+      "path": "analysis/plot_prediction_diagnostics.py",
       "release_sha256": "1bda5420dd581635a168fff69084da8f6d27da153723b968a443392aceeb0bfd",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/analysis/plot_reviewer_diagnostics.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "1bda5420dd581635a168fff69084da8f6d27da153723b968a443392aceeb0bfd"
     },
     {
-      "path": "analysis/reviewer_diagnostics.py",
-      "release_sha256": "9d4de0aeb317578a6b5e38abc0793fef49ebd61430fe14a0dde9f1b0f3f50410",
-      "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/analysis/reviewer_diagnostics.py",
+      "path": "analysis/prediction_diagnostics.py",
+      "release_sha256": "87917addfc4ac5373658c83a91c72b9613c8ffb476d056a2a7ff34f35f55fa44",
+      "status": "adapted_copy",
+      "source_collection": "prediction-experiments",
       "original_sha256": "9d4de0aeb317578a6b5e38abc0793fef49ebd61430fe14a0dde9f1b0f3f50410"
     },
     {
       "path": "analysis/token_coverage.py",
       "release_sha256": "ab10ce03394a3532f058eebe4c73fad2d1298aa950245e4855c5dbebdbb626de",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/analysis/token_coverage.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "ab10ce03394a3532f058eebe4c73fad2d1298aa950245e4855c5dbebdbb626de"
     },
     {
       "path": "baseline_study/__init__.py",
       "release_sha256": "c0fbf107cc68e4bcce1ea8dacad2c275f1adaa043fff255d7e9652c9e32e7eb5",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/baseline_study/__init__.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "c0fbf107cc68e4bcce1ea8dacad2c275f1adaa043fff255d7e9652c9e32e7eb5"
     },
     {
       "path": "baseline_study/neural.py",
       "release_sha256": "f527356b6ac7f271a8f188b6282abb9cc98f13eaaf2a0215d1b9426480469131",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/baseline_study/neural.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "f527356b6ac7f271a8f188b6282abb9cc98f13eaaf2a0215d1b9426480469131"
     },
     {
       "path": "baseline_study/protocol.py",
       "release_sha256": "f0f7db9f56b1e546e706e72d70d395c725c7fb558f84959f5a5d2725dbd30e80",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/baseline_study/protocol.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "f0f7db9f56b1e546e706e72d70d395c725c7fb558f84959f5a5d2725dbd30e80"
     },
     {
       "path": "baseline_study/xgb.py",
       "release_sha256": "d204eb43da0f05b04da8b932bd46a2f780b3068456ac09236006ce4c6cf5bcd6",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/baseline_study/xgb.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "d204eb43da0f05b04da8b932bd46a2f780b3068456ac09236006ce4c6cf5bcd6"
     },
     {
       "path": "common/__init__.py",
       "release_sha256": "405ab92efaa3c88179751512b19ce2b6dfb79b95fa2ae5964a9ed7a796fec5d4",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/common/__init__.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "405ab92efaa3c88179751512b19ce2b6dfb79b95fa2ae5964a9ed7a796fec5d4"
     },
     {
       "path": "common/artifacts.py",
       "release_sha256": "895a4b10af37fc5f626ef066ec44331b01b2d39431b6644910612374843bb76e",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/common/artifacts.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "895a4b10af37fc5f626ef066ec44331b01b2d39431b6644910612374843bb76e"
     },
     {
       "path": "common/config.py",
       "release_sha256": "9bfb8c42b98bfd9554dabf2c70b4c4de7a33be2403653003dc9a7f7b950ba6f7",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/common/config.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "9bfb8c42b98bfd9554dabf2c70b4c4de7a33be2403653003dc9a7f7b950ba6f7"
     },
     {
       "path": "common/data.py",
       "release_sha256": "cc7c5685823bdd428c0ce74246ab803662fb4ca95db2d340e726ea8bbc8e4129",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/common/data.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "cc7c5685823bdd428c0ce74246ab803662fb4ca95db2d340e726ea8bbc8e4129"
     },
     {
       "path": "common/history.py",
       "release_sha256": "aadc2a88ff8c9a33aecca0c61f8ce3710a9ec728bf0eefff2ca4dc91ca5b53e5",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/common/history.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "aadc2a88ff8c9a33aecca0c61f8ce3710a9ec728bf0eefff2ca4dc91ca5b53e5"
     },
     {
       "path": "common/metrics.py",
       "release_sha256": "08636b09bbc10bdc7e99b67f281c3dd338c3c632bd355f63821d0d6527a8aa23",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/common/metrics.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "08636b09bbc10bdc7e99b67f281c3dd338c3c632bd355f63821d0d6527a8aa23"
     },
     {
       "path": "common/neural.py",
       "release_sha256": "1c257f1fd5d48f16be21610f319b9390e4bab1ca1b9d9e3f02582ac1bab7ac3e",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/common/neural.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "1c257f1fd5d48f16be21610f319b9390e4bab1ca1b9d9e3f02582ac1bab7ac3e"
     },
     {
       "path": "common/preprocessing.py",
       "release_sha256": "eff4f2273a25c6c81695ea2dac278251987af67df26fdcdcf4d8a33aa819907b",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/common/preprocessing.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "eff4f2273a25c6c81695ea2dac278251987af67df26fdcdcf4d8a33aa819907b"
     },
     {
       "path": "common/protocols.py",
       "release_sha256": "c67aa863b1914f18b41a6cd42396359b5c6d841b427350de520193a16c926af9",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/common/protocols.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "c67aa863b1914f18b41a6cd42396359b5c6d841b427350de520193a16c926af9"
     },
     {
       "path": "configs/paper.local.yaml",
-      "release_sha256": "293891edeae2867fec62aed3f402ea35f2eb5a6df325efb4ef103feb330ad2e1",
+      "release_sha256": "4195a15bc550c6557c080e552d9331662fa4aea35a8b85d4f33cdd6beae12c98",
       "status": "adapted_copy",
-      "original_path": "20261021/reviewer_experiments/configs/paper.local.yaml",
+      "source_collection": "prediction-experiments",
       "original_sha256": "c99761b8d42c1a6a5a21f3cf6c70d662fbc3a87d76c1a5c943a4b2d4acc21639"
     },
     {
       "path": "configs/reliability-cascade.fragment.yaml",
       "release_sha256": "7e1def2bec42a12b55f4891eb8aba2f3e6e4d9fd01947c45cde5cc3cd138cfc0",
       "status": "adapted_copy",
-      "original_path": "20261021/reviewer_experiments/configs/reliability-cascade.fragment.yaml",
+      "source_collection": "prediction-experiments",
       "original_sha256": "7292d2365a2075be37b6c29df765a45712bfe22bf2e5d444e79d010fbfd45f0e"
     },
     {
       "path": "configs/telemetry_contract.json",
-      "release_sha256": "d704ff85c63d7833c04671f4e6584bc854030b2bad7bedca28f4fcb93f872b80",
+      "release_sha256": "0f9c9f2443398decd13e6ebdb786f2d3b1944af561c05c9e80726abb8352c560",
       "status": "new_release_file"
     },
     {
       "path": "docs/DATA_AND_PROTOCOL.md",
-      "release_sha256": "46932b49e3d7ddd7e6c53c79b77edc1dab8d10ee7d383707254491bbabb40ff4",
+      "release_sha256": "a0e0f30bf6e204af317a2e4e31808cb5a36a910db852516b63fb09558d2ed527",
       "status": "new_release_file"
     },
     {
       "path": "docs/EXPERIMENTS.md",
-      "release_sha256": "d16a250ce961d41fc9b4301019a41a7bbabc9722f978ae4951480136c24d2c22",
+      "release_sha256": "a2a17bcb47d9ff65f2e2274e9ce6e9f7f91c7c7cd5f3ef5acb67e441b16795bb",
       "status": "new_release_file"
     },
     {
       "path": "docs/VALIDATION.md",
-      "release_sha256": "57af4f982a2a428352ae063412df88285f51f8a21674d0c16ce6869b45355227",
+      "release_sha256": "25fc173dc8a5a2390b0294fc11c242473b12b24d4d2f9dd8336d9122e96c7696",
       "status": "new_release_file"
     },
     {
       "path": "dynamic_hybrid/__init__.py",
       "release_sha256": "301abbfb48fc6efe8cea37a5b542b78f1a4070a4deaa288539f18de4814593db",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/dynamic_hybrid/__init__.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "301abbfb48fc6efe8cea37a5b542b78f1a4070a4deaa288539f18de4814593db"
     },
     {
       "path": "dynamic_hybrid/contracts.py",
       "release_sha256": "225c39bd7dd32d005d140bb1cf68c70afda43bbb765b10b62c7d78063ca3c869",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/dynamic_hybrid/contracts.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "225c39bd7dd32d005d140bb1cf68c70afda43bbb765b10b62c7d78063ca3c869"
     },
     {
       "path": "dynamic_hybrid/dataset.py",
       "release_sha256": "dc3214e6dba33f35ac153ecf67dada2d6775c5ff9c458fd74eb08a883cd64df5",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/dynamic_hybrid/dataset.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "dc3214e6dba33f35ac153ecf67dada2d6775c5ff9c458fd74eb08a883cd64df5"
     },
     {
       "path": "dynamic_hybrid/evaluate.py",
       "release_sha256": "fc19043c2837cb356e87a523a0ebe2eba5d47aa5c984e77c54a5554da4f9b049",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/dynamic_hybrid/evaluate.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "fc19043c2837cb356e87a523a0ebe2eba5d47aa5c984e77c54a5554da4f9b049"
     },
     {
       "path": "dynamic_hybrid/features.py",
       "release_sha256": "3397a125fe281d81830f037f51b19d2088abe8e47624b875774dbb8ebff7cb28",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/dynamic_hybrid/features.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "3397a125fe281d81830f037f51b19d2088abe8e47624b875774dbb8ebff7cb28"
     },
     {
       "path": "dynamic_hybrid/model.py",
       "release_sha256": "a1b489b3cb894eb7c26040f194e85f685269009cd02bb7b709fd08f339771297",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/dynamic_hybrid/model.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "a1b489b3cb894eb7c26040f194e85f685269009cd02bb7b709fd08f339771297"
     },
     {
       "path": "dynamic_hybrid/pipeline.py",
       "release_sha256": "db49116f1d2f57c013dd9b624a9a7aa27de7df7ccc593e69d505044add00cabd",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/dynamic_hybrid/pipeline.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "db49116f1d2f57c013dd9b624a9a7aa27de7df7ccc593e69d505044add00cabd"
     },
     {
       "path": "dynamic_hybrid/run.py",
       "release_sha256": "d3070372d4883f8f9274aa8eea59faf1f85c0a1f4cb1c1e68de773e8cb9277be",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/dynamic_hybrid/run.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "d3070372d4883f8f9274aa8eea59faf1f85c0a1f4cb1c1e68de773e8cb9277be"
     },
     {
       "path": "dynamic_hybrid/train.py",
       "release_sha256": "a4c97b013d5b84e7c7d5eaac1732eebce4d215ea83ab30f6d28557f1820d2abc",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/dynamic_hybrid/train.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "a4c97b013d5b84e7c7d5eaac1732eebce4d215ea83ab30f6d28557f1820d2abc"
     },
     {
       "path": "followup_study/README.md",
-      "release_sha256": "b2e48ad4d0c0d4b6b2c5c113a5a448afb4ee1512c33f3b4a2836238309ea9ce9",
+      "release_sha256": "be2922eed6d6f2fd0046ab5c5094be5cbbafb6b5153593ce828dd275d78d82ff",
       "status": "adapted_copy",
-      "original_path": "20261021/reviewer_followup_20261023/README.md",
+      "source_collection": "routing-calibration",
       "original_sha256": "02ce921040fe17540547b5ba70ae978792115116e20622c0ac7512080cbf0a5a"
     },
     {
       "path": "followup_study/SOURCE_SHA256SUMS.txt",
-      "release_sha256": "6e361045b0ea629180b2179a3cbab5062c0858688d3d1232610c328ffdef2226",
+      "release_sha256": "44193a04c1035af927a974090856b7e3ac319721382a5f377fa7d380a99d4ffa",
       "status": "adapted_copy",
-      "original_path": "20261021/reviewer_followup_20261023/SOURCE_SHA256SUMS.txt",
+      "source_collection": "routing-calibration",
       "original_sha256": "4b0749d9a815639cb91a8b76289945e01fd976578edd30738885149169ebe4cf"
     },
     {
       "path": "followup_study/allocation_study.py",
       "release_sha256": "508f1b572683be398bb24268f5971e7674adf77fb158c0393b1e50ba2838db29",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_followup_20261023/allocation_study.py",
+      "source_collection": "routing-calibration",
       "original_sha256": "508f1b572683be398bb24268f5971e7674adf77fb158c0393b1e50ba2838db29"
     },
     {
       "path": "followup_study/gate_study.py",
       "release_sha256": "7104aa510b891b06b31d434ac8c2afb1392aa83a4054c03ef5f18289c9a4ec5d",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_followup_20261023/gate_study.py",
+      "source_collection": "routing-calibration",
       "original_sha256": "7104aa510b891b06b31d434ac8c2afb1392aa83a4054c03ef5f18289c9a4ec5d"
     },
     {
       "path": "followup_study/prepare_followup.py",
-      "release_sha256": "9336f06bd08568ffd99f97b653317d18e5b7afcbad78e4ce606edac824e5ab55",
-      "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_followup_20261023/prepare_followup.py",
+      "release_sha256": "2279d0925afcb67b3a21ec837488fd2809707ae8836f5e8f7b22a93533a094ec",
+      "status": "adapted_copy",
+      "source_collection": "routing-calibration",
       "original_sha256": "9336f06bd08568ffd99f97b653317d18e5b7afcbad78e4ce606edac824e5ab55"
     },
     {
       "path": "followup_study/requirements.txt",
       "release_sha256": "adb11f7c3efe29a7dc9b3384216ece21a4f6c2bb896e63cbcef41f7f83c72d3a",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_followup_20261023/requirements.txt",
+      "source_collection": "routing-calibration",
       "original_sha256": "adb11f7c3efe29a7dc9b3384216ece21a4f6c2bb896e63cbcef41f7f83c72d3a"
     },
     {
       "path": "followup_study/run_followup.py",
       "release_sha256": "b77e858b0c0bb648d8852d633ef18e9b27454b91098301f2112a2c420f98e92f",
       "status": "adapted_copy",
-      "original_path": "20261021/reviewer_followup_20261023/run_followup.py",
+      "source_collection": "routing-calibration",
       "original_sha256": "df2eb69092dbfedecc0fc5de76cabd2d368a0f051b1302e8414eb0911b35c9b7"
     },
     {
       "path": "followup_study/scripts/run_followup.slurm",
-      "release_sha256": "c00161964ea5a81119fd3f3600fa741ca09e286251f7ad1bc141a94345527c3a",
+      "release_sha256": "e6cfc392f18482d3eb35bb847460c1be6f0307fa0c26d2a1272e03ece39871ee",
       "status": "adapted_copy",
-      "original_path": "20261021/reviewer_followup_20261023/scripts/run_followup.slurm",
+      "source_collection": "routing-calibration",
       "original_sha256": "abd90cc20b7b3a6168f3629ede304e4fff4566434aa481a26f29483475c15eac"
     },
     {
       "path": "followup_study/study_utils.py",
       "release_sha256": "b6d94512e61497083f81bfc3d19c8b1ba3cd9ff4f5026e023b0c93ec5824eaad",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_followup_20261023/study_utils.py",
+      "source_collection": "routing-calibration",
       "original_sha256": "b6d94512e61497083f81bfc3d19c8b1ba3cd9ff4f5026e023b0c93ec5824eaad"
     },
     {
       "path": "followup_study/tests/test_followup.py",
       "release_sha256": "695f72a4ca9e2db4c974876418934f5ff8bcefaa552ea6b8dfdd7e5bc96280f0",
       "status": "adapted_copy",
-      "original_path": "20261021/reviewer_followup_20261023/tests/test_followup.py",
+      "source_collection": "routing-calibration",
       "original_sha256": "173addef7edd2df9a8272214e6ad5fa2912ba1f5e9a3bd2ac85a81fcb47f523a"
     },
     {
       "path": "followup_study/verify_source.py",
-      "release_sha256": "89ba9b7ef8170eab471dfde65037bee12b4f43886444e6fa594bdd9be45b71d0",
+      "release_sha256": "7f620d031b90ec60532454bd6f94e5b1c7a9873daaa39b53586d53869cd21c68",
       "status": "adapted_copy",
-      "original_path": "20261021/reviewer_followup_20261023/verify_source.py",
+      "source_collection": "routing-calibration",
       "original_sha256": "9c7c0b6c52bfd10233befee622226a1c93dcc4e411e96f1aff7283989b2a92ba"
     },
     {
       "path": "hardware_study/README.md",
-      "release_sha256": "f71a175657ea3746bd57395b052ef3a9cd482363962f0c58d718bef4c8022695",
+      "release_sha256": "c24be0ac4bb6ba31a289d5bdb8ba72ca3fe435515fc1aa91ea4f76c1ee97d7f1",
       "status": "adapted_copy",
-      "original_path": "20261021/reviewer_hardware_20261023/README.md",
+      "source_collection": "hardware-analysis",
       "original_sha256": "a0d68a3a20d598087b3cf534e6b062fd8f121d6a70b2dcae3e7160ccf1865f35"
     },
     {
@@ -385,492 +385,492 @@
     },
     {
       "path": "hardware_study/run_capacity_analysis.py",
-      "release_sha256": "b2a43891a4a801e2128d9c94d4bc2acb0fd4707aab075cd43e3b8cbc6cee4774",
+      "release_sha256": "7328b9dc8a76e550f7150847d8ab2a45b0239f9e284e6da7c22c50e88fa47409",
       "status": "adapted_copy",
-      "original_path": "20261021/reviewer_hardware_20261023/run_capacity_analysis.py",
+      "source_collection": "hardware-analysis",
       "original_sha256": "25f56102d9b757c68178d98b06b9fefb840b43361956c2240c5b1b88c55931bb"
     },
     {
       "path": "hardware_study/run_capacity_analysis.slurm",
       "release_sha256": "e95e947e8079b096e585fe2151b81a24b2eb14a2712cdd4c2e09bec989a723b7",
       "status": "adapted_copy",
-      "original_path": "20261021/reviewer_hardware_20261023/run_capacity_analysis.slurm",
+      "source_collection": "hardware-analysis",
       "original_sha256": "6f2aedc09e6075ce4b02ead902ab4d9c95f26ce04cb2318d50fb89f38ffc6b74"
     },
     {
       "path": "hardware_study/test_capacity_analysis.py",
       "release_sha256": "e0ef6e4b26e6664db37f0d154b89cdf147275fc0c060c6db771926e21a066329",
       "status": "adapted_copy",
-      "original_path": "20261021/reviewer_hardware_20261023/test_capacity_analysis.py",
+      "source_collection": "hardware-analysis",
       "original_sha256": "d453101d5442f8b28bf8dcf14432b5721af8ac8e08191ed28cf80963a3965f01"
     },
     {
       "path": "hybrid/__init__.py",
       "release_sha256": "b34480418359967cb9b9252d6580338dcae9b515198dff2a0c2635f8e2e3c7b2",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/hybrid/__init__.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "b34480418359967cb9b9252d6580338dcae9b515198dff2a0c2635f8e2e3c7b2"
     },
     {
       "path": "hybrid/fixed_blend.py",
       "release_sha256": "37987dd9379427a7cf41b779918cfccfe393514aaaac1e5745608e66fefee40c",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/hybrid/fixed_blend.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "37987dd9379427a7cf41b779918cfccfe393514aaaac1e5745608e66fefee40c"
     },
     {
       "path": "hybrid/run.py",
       "release_sha256": "839c917dd4bf8413e2ab8d3b97926c2e4b60ec7c7a7972026d93b37367c5abf0",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/hybrid/run.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "839c917dd4bf8413e2ab8d3b97926c2e4b60ec7c7a7972026d93b37367c5abf0"
     },
     {
       "path": "hybrid/script_context.py",
       "release_sha256": "3dfdf01367bb1795d4c48820d0c98dc3616c8ac3044c35e3eaf33c55fbb0ee4a",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/hybrid/script_context.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "3dfdf01367bb1795d4c48820d0c98dc3616c8ac3044c35e3eaf33c55fbb0ee4a"
     },
     {
       "path": "last-1/run.py",
       "release_sha256": "4179f4cc748b88083ff1b0230bdba3d2de366d52d94ae26f500cbd98e51ee641",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/last-1/run.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "4179f4cc748b88083ff1b0230bdba3d2de366d52d94ae26f500cbd98e51ee641"
     },
     {
       "path": "lstm/evaluate.py",
       "release_sha256": "d6e3ea778bba77c5a65ad337b9f1aabede9fd76d5f7165ad83b92247ab615197",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/lstm/evaluate.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "d6e3ea778bba77c5a65ad337b9f1aabede9fd76d5f7165ad83b92247ab615197"
     },
     {
       "path": "lstm/model.py",
       "release_sha256": "c77db2d0b8bcafbf3be1222e35c10cdd6c0a9566a6f795ba6c9e097e3303878d",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/lstm/model.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "c77db2d0b8bcafbf3be1222e35c10cdd6c0a9566a6f795ba6c9e097e3303878d"
     },
     {
       "path": "lstm/train.py",
       "release_sha256": "adf26ee4b9c1ef7ee9f56a018719f7db22a9774d41be2978b8c3be61e5cd3463",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/lstm/train.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "adf26ee4b9c1ef7ee9f56a018719f7db22a9774d41be2978b8c3be61e5cd3463"
     },
     {
       "path": "online_study/__init__.py",
-      "release_sha256": "70ca8f40d73c78211f32c4e975af68a48b117536a3433d3087152a5003f413b5",
-      "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/online_study/__init__.py",
+      "release_sha256": "be67d3980fdd087f08e63b42a0534e6b2daa8b30971945a7b50e05cc572f1610",
+      "status": "adapted_copy",
+      "source_collection": "prediction-experiments",
       "original_sha256": "70ca8f40d73c78211f32c4e975af68a48b117536a3433d3087152a5003f413b5"
     },
     {
       "path": "online_study/benchmark.py",
       "release_sha256": "cf704d46a9885274aafdf34d7ac8eb52268d1050d2cc3f4076127251ddeeb366",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/online_study/benchmark.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "cf704d46a9885274aafdf34d7ac8eb52268d1050d2cc3f4076127251ddeeb366"
     },
     {
       "path": "online_study/measurement.py",
       "release_sha256": "7cccae53be529e4e44ed91478371af38657223022018e280d51fd1b14399cc56",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/online_study/measurement.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "7cccae53be529e4e44ed91478371af38657223022018e280d51fd1b14399cc56"
     },
     {
       "path": "online_study/offline_reference.py",
       "release_sha256": "60663ba72c13d433328ff2d8fb392655976061bba3d91f52e4ab0e19234deac2",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/online_study/offline_reference.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "60663ba72c13d433328ff2d8fb392655976061bba3d91f52e4ab0e19234deac2"
     },
     {
       "path": "online_study/reference.py",
       "release_sha256": "e3c241e8e5a7d8660b45590b5b9a1e68665e139209e7845083603aafba650576",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/online_study/reference.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "e3c241e8e5a7d8660b45590b5b9a1e68665e139209e7845083603aafba650576"
     },
     {
       "path": "online_study/runtime.py",
       "release_sha256": "46d0cd454620252f872960ca82e9a2110031f508e4b3431f494e4556e036d4a5",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/online_study/runtime.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "46d0cd454620252f872960ca82e9a2110031f508e4b3431f494e4556e036d4a5"
     },
     {
       "path": "online_study/suite.py",
-      "release_sha256": "ac883148a0254f3fa05c5d69539b9312c37c142941fff55d7f1a678620109b2b",
-      "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/online_study/suite.py",
+      "release_sha256": "c5e1a0e2e52270597a74941cb790e12a2ec0d7954a8b4a645614e418cdcb1272",
+      "status": "adapted_copy",
+      "source_collection": "prediction-experiments",
       "original_sha256": "ac883148a0254f3fa05c5d69539b9312c37c142941fff55d7f1a678620109b2b"
     },
     {
       "path": "online_study/summarize.py",
       "release_sha256": "123900f0f06fe066bd288f9a9c307a90f40218715bf8ae8c59c435ff2bc5b79b",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/online_study/summarize.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "123900f0f06fe066bd288f9a9c307a90f40218715bf8ae8c59c435ff2bc5b79b"
     },
     {
       "path": "online_study/test_measurement.py",
       "release_sha256": "0c081edc1713e268ff87b341d291a164a007142045630d220a3426ba1725fa33",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/online_study/test_measurement.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "0c081edc1713e268ff87b341d291a164a007142045630d220a3426ba1725fa33"
     },
     {
       "path": "online_study/test_offline_reference.py",
       "release_sha256": "b00ade769c0668ce7f56f69f3bd14b5a7c144d76672c682821aaa279c706e89e",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/online_study/test_offline_reference.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "b00ade769c0668ce7f56f69f3bd14b5a7c144d76672c682821aaa279c706e89e"
     },
     {
       "path": "online_study/test_reference.py",
       "release_sha256": "45e301ee218ff3ce0479cfdd708692bbfa6f421f6e99e61a30bcaa13057df7aa",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/online_study/test_reference.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "45e301ee218ff3ce0479cfdd708692bbfa6f421f6e99e61a30bcaa13057df7aa"
     },
     {
       "path": "online_study/test_suite.py",
       "release_sha256": "7679d6eaca0cb9de0c76ae2204f4a33c11a20d5c923c40b331c1d3e417d6472a",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/online_study/test_suite.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "7679d6eaca0cb9de0c76ae2204f4a33c11a20d5c923c40b331c1d3e417d6472a"
     },
     {
       "path": "publication_reporting/README.md",
-      "release_sha256": "3dde093884b174a458fcf3e0ba3d07a7d7b3fc6a69e961b24c48a9ba12957f7c",
+      "release_sha256": "4575a57109b36951735e7ece470c4855f59a83cca029c7497d8694f6bcbdd562",
       "status": "new_release_file"
     },
     {
       "path": "publication_reporting/__init__.py",
-      "release_sha256": "e9a69711d94c80ebea35184100f4150ae58b1f7c65b491d4b0066d12c390f0ea",
+      "release_sha256": "67cc3333d0107e71399777db7d33d527c5b5418a14cdb9ea8043b911ac49f356",
       "status": "new_release_file"
     },
     {
       "path": "publication_reporting/figures.py",
-      "release_sha256": "2f741735519868c103a0d7ed633516772b45d87efa95f5c9ffb9b15c6ab10c8e",
+      "release_sha256": "b7418620c25d55825282e399ca7841a1810c29e5faa1bccb50eb43432fde449d",
       "status": "new_release_file"
     },
     {
       "path": "publication_reporting/report.py",
-      "release_sha256": "bc402828a24979ba1da220c53112f46e181ed2a1c2daede95c306fd3bccb98bc",
+      "release_sha256": "c16a567f5e6986e384ee720d654da0a8fd1addc9cde47a4f36f63417269bab96",
       "status": "new_release_file"
     },
     {
       "path": "pytest.ini",
       "release_sha256": "19081560e450048e9022e259d6e50ee170f5761c8903d745bd8d06b545e27c92",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/pytest.ini",
+      "source_collection": "prediction-experiments",
       "original_sha256": "19081560e450048e9022e259d6e50ee170f5761c8903d745bd8d06b545e27c92"
     },
     {
       "path": "qwen/__init__.py",
       "release_sha256": "4863984adc34416d8dbd180f753f632f65c771ecc4c5bc4d86d083691b16935e",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/qwen/__init__.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "4863984adc34416d8dbd180f753f632f65c771ecc4c5bc4d86d083691b16935e"
     },
     {
       "path": "qwen/base_selection.py",
       "release_sha256": "ff4a56f4c5c4fe1610e10c10e84707537aeef516b5ea9f0b053e409633656475",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/qwen/base_selection.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "ff4a56f4c5c4fe1610e10c10e84707537aeef516b5ea9f0b053e409633656475"
     },
     {
       "path": "qwen/benchmark.py",
       "release_sha256": "049a7d2661633efd281d402c636a209860743bb824cf362489f9e480d916830c",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/qwen/benchmark.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "049a7d2661633efd281d402c636a209860743bb824cf362489f9e480d916830c"
     },
     {
       "path": "qwen/cache_replay.py",
       "release_sha256": "065f4b35ca4b9579e2c9f7342a1532de8779bae11136c610ed669708afc3b3c9",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/qwen/cache_replay.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "065f4b35ca4b9579e2c9f7342a1532de8779bae11136c610ed669708afc3b3c9"
     },
     {
       "path": "qwen/contract.py",
       "release_sha256": "e639691f01950a606562f00449f86795bb62598ab01aba816057b486d1372876",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/qwen/contract.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "e639691f01950a606562f00449f86795bb62598ab01aba816057b486d1372876"
     },
     {
       "path": "qwen/dataset.py",
       "release_sha256": "c98d9d0424acd104fa348ba1057680d6d517505a0645c30a945b147e5f7ec697",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/qwen/dataset.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "c98d9d0424acd104fa348ba1057680d6d517505a0645c30a945b147e5f7ec697"
     },
     {
       "path": "qwen/evaluate.py",
       "release_sha256": "f77bfb4b6aea582c295f04b63cdabe9ad15c4bed4a86b80b9f6d9a34f78e56cc",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/qwen/evaluate.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "f77bfb4b6aea582c295f04b63cdabe9ad15c4bed4a86b80b9f6d9a34f78e56cc"
     },
     {
       "path": "qwen/model.py",
       "release_sha256": "1ffa6923fa61a6dbb8a603b07b850f97c2b68e44fa3dfc637ab8e94c928a5e65",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/qwen/model.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "1ffa6923fa61a6dbb8a603b07b850f97c2b68e44fa3dfc637ab8e94c928a5e65"
     },
     {
       "path": "qwen/run.py",
       "release_sha256": "30a5d69cfa03c83f4838aa5de74214f427210913305664e09d95ac2b1b5697b2",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/qwen/run.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "30a5d69cfa03c83f4838aa5de74214f427210913305664e09d95ac2b1b5697b2"
     },
     {
       "path": "qwen/train.py",
       "release_sha256": "781514d5d6bb4478adfa6c0ff97d7b5aec1ff68aa6fa018e11eca1a16dc6637b",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/qwen/train.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "781514d5d6bb4478adfa6c0ff97d7b5aec1ff68aa6fa018e11eca1a16dc6637b"
     },
     {
       "path": "reliability_cascade/__init__.py",
       "release_sha256": "946ce441cdefa9dff5329d587eaf0c130f354bf5cf2e31771df7e4c21c5ebe21",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/reliability_cascade/__init__.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "946ce441cdefa9dff5329d587eaf0c130f354bf5cf2e31771df7e4c21c5ebe21"
     },
     {
       "path": "reliability_cascade/benchmark_online.py",
       "release_sha256": "6132fad7f6f3de9547c4cba9da982dd302c6c960685abd74a98aeefcb4f3e31b",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/reliability_cascade/benchmark_online.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "6132fad7f6f3de9547c4cba9da982dd302c6c960685abd74a98aeefcb4f3e31b"
     },
     {
       "path": "reliability_cascade/contracts.py",
       "release_sha256": "d9c4c805781b8cbcab69c44daaa41e9a33439a0a598422bb17bb867a847704e8",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/reliability_cascade/contracts.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "d9c4c805781b8cbcab69c44daaa41e9a33439a0a598422bb17bb867a847704e8"
     },
     {
       "path": "reliability_cascade/evaluation.py",
       "release_sha256": "e20fd1fa3b1ac8e3c4128f3a895f002ce7b4c45d5f914b24636f1423a35c51a7",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/reliability_cascade/evaluation.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "e20fd1fa3b1ac8e3c4128f3a895f002ce7b4c45d5f914b24636f1423a35c51a7"
     },
     {
       "path": "reliability_cascade/features.py",
       "release_sha256": "86231a95cea6954b83a985c18f458fc7882b3c8232bfa25dd52791e6e352fb5a",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/reliability_cascade/features.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "86231a95cea6954b83a985c18f458fc7882b3c8232bfa25dd52791e6e352fb5a"
     },
     {
       "path": "reliability_cascade/history.py",
       "release_sha256": "4dc71bd86a1ebc08e742e8bc57043390a09e93f8b437ffb69d57288fb521ecc5",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/reliability_cascade/history.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "4dc71bd86a1ebc08e742e8bc57043390a09e93f8b437ffb69d57288fb521ecc5"
     },
     {
       "path": "reliability_cascade/integrity.py",
       "release_sha256": "dcea4705efe66f89f821a8bc673e778958ea51b51cac25ff3f4cd59b37027f5a",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/reliability_cascade/integrity.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "dcea4705efe66f89f821a8bc673e778958ea51b51cac25ff3f4cd59b37027f5a"
     },
     {
       "path": "reliability_cascade/model.py",
       "release_sha256": "57522a5f10fafd1762869293b8e080ae96be31642dbda7251543ceb46ef2fc00",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/reliability_cascade/model.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "57522a5f10fafd1762869293b8e080ae96be31642dbda7251543ceb46ef2fc00"
     },
     {
       "path": "reliability_cascade/online_runtime.py",
       "release_sha256": "6971b8023d65d3cc3f2697d5148b618531ce3cd5c4bce6dd7ecb3eda85d0f5b7",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/reliability_cascade/online_runtime.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "6971b8023d65d3cc3f2697d5148b618531ce3cd5c4bce6dd7ecb3eda85d0f5b7"
     },
     {
       "path": "reliability_cascade/pipeline.py",
       "release_sha256": "4c2eac772f82f7d4470cb182906f847415d21ca604e39d6391d82e4a00efc13b",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/reliability_cascade/pipeline.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "4c2eac772f82f7d4470cb182906f847415d21ca604e39d6391d82e4a00efc13b"
     },
     {
       "path": "reliability_cascade/run.py",
       "release_sha256": "2a1b6672737b8331c02b2b9403f645ccfe537fd02591255aa37f5edbaf98af3e",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/reliability_cascade/run.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "2a1b6672737b8331c02b2b9403f645ccfe537fd02591255aa37f5edbaf98af3e"
     },
     {
       "path": "reliability_cascade/selection.py",
       "release_sha256": "7eed020871ed3b62dbbf8317fe6337423cedd647c298ba0591c97ba030758b39",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/reliability_cascade/selection.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "7eed020871ed3b62dbbf8317fe6337423cedd647c298ba0591c97ba030758b39"
     },
     {
       "path": "reliability_cascade/verify.py",
       "release_sha256": "45b031d98f738c7c70a33f483463c9a0b744cf15dc69fe36ea0fd13e745b8780",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/reliability_cascade/verify.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "45b031d98f738c7c70a33f483463c9a0b744cf15dc69fe36ea0fd13e745b8780"
+    },
+    {
+      "path": "requirements-analysis.txt",
+      "release_sha256": "c81b3f1cae2ce6c2bcb45166f50be230519e951558da591be4073bdd23c1d061",
+      "status": "unchanged_copy",
+      "source_collection": "prediction-experiments",
+      "original_sha256": "c81b3f1cae2ce6c2bcb45166f50be230519e951558da591be4073bdd23c1d061"
     },
     {
       "path": "requirements-cascade.txt",
       "release_sha256": "862dcaf37fb3ce87dede9a99870768ce672a4d344d0e2dde0daff38eba91b1a8",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/requirements-cascade.txt",
+      "source_collection": "prediction-experiments",
       "original_sha256": "862dcaf37fb3ce87dede9a99870768ce672a4d344d0e2dde0daff38eba91b1a8"
     },
     {
       "path": "requirements-paper.txt",
       "release_sha256": "509ee3a8df4b7b0883b6402bd021a5598f87fb2225df853eb5a5b525a1db48ad",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/requirements-paper.txt",
+      "source_collection": "prediction-experiments",
       "original_sha256": "509ee3a8df4b7b0883b6402bd021a5598f87fb2225df853eb5a5b525a1db48ad"
     },
     {
       "path": "requirements-qwen.txt",
       "release_sha256": "c52e51236c1572f405c171f4a1ee22566704711a9dada084df5628900fe5c211",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/requirements-qwen.txt",
+      "source_collection": "prediction-experiments",
       "original_sha256": "c52e51236c1572f405c171f4a1ee22566704711a9dada084df5628900fe5c211"
-    },
-    {
-      "path": "requirements-reviewer.txt",
-      "release_sha256": "c81b3f1cae2ce6c2bcb45166f50be230519e951558da591be4073bdd23c1d061",
-      "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/requirements-reviewer.txt",
-      "original_sha256": "c81b3f1cae2ce6c2bcb45166f50be230519e951558da591be4073bdd23c1d061"
     },
     {
       "path": "requirements.txt",
       "release_sha256": "a7ff26acefe6d68047f7dd6ee6c3f0af464c3345223c07da6b4965fca52d08fb",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/requirements.txt",
+      "source_collection": "prediction-experiments",
       "original_sha256": "a7ff26acefe6d68047f7dd6ee6c3f0af464c3345223c07da6b4965fca52d08fb"
     },
     {
       "path": "scripts/__init__.py",
       "release_sha256": "ee8656f5592152e88b2435a4a89223f300481715bd1292d2492a58546c5ba0c6",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/scripts/__init__.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "ee8656f5592152e88b2435a4a89223f300481715bd1292d2492a58546c5ba0c6"
     },
     {
       "path": "scripts/aggregate_cascade_reference.py",
       "release_sha256": "2d772f324a7779244be3e2583a9690f3cc86a54f8c89ab3d62cb2b6d9fae1f84",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/scripts/aggregate_cascade_reference.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "2d772f324a7779244be3e2583a9690f3cc86a54f8c89ab3d62cb2b6d9fae1f84"
     },
     {
       "path": "scripts/aggregate_results.py",
       "release_sha256": "11471cdaa237ed7c7ea1f5ff74d26e68d6f60a122b97016f9b2f5c857b8a006c",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/scripts/aggregate_results.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "11471cdaa237ed7c7ea1f5ff74d26e68d6f60a122b97016f9b2f5c857b8a006c"
     },
     {
       "path": "scripts/build_release_provenance.py",
-      "release_sha256": "7cc914879280d4c81252b919e810c141961617b6b4ee265858c02b24348bfa5b",
+      "release_sha256": "cf8c9d1d9f33e7827955d3015255d7fc2762dd3761e504762ffb5808d8777266",
       "status": "new_release_file"
     },
     {
       "path": "scripts/build_source_manifest.py",
-      "release_sha256": "3462741d73b68f44fbadcb24b7f9d1097d00eff0684a3d1577a850e6aea9b3e3",
+      "release_sha256": "76f87b44fcb9c1e007aa89a7a2f561ce4096738569e8aa5da3041f709224c3c6",
       "status": "adapted_copy",
-      "original_path": "20261021/reviewer_experiments/scripts/build_source_manifest.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "1c09402d0f21b3d0ab0da927099f6f95c0b724b1a01e89757909ad419b30c865"
     },
     {
       "path": "scripts/capture_environment.py",
       "release_sha256": "f1d877248f5a0d4d48078ff59728e321569674aa09c9422f090f12cb3f96ee87",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/scripts/capture_environment.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "f1d877248f5a0d4d48078ff59728e321569674aa09c9422f090f12cb3f96ee87"
     },
     {
       "path": "scripts/compare_cascade_variants.py",
       "release_sha256": "a36a3cb1b0d1bb90a759b84a2a903c2ca5ccb82ad6b3b7a57a2722c2851b60bc",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/scripts/compare_cascade_variants.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "a36a3cb1b0d1bb90a759b84a2a903c2ca5ccb82ad6b3b7a57a2722c2851b60bc"
     },
     {
       "path": "scripts/export_anonymized_predictions.py",
       "release_sha256": "4c495c013abb922a4aa563fd1e80bf54f11b35eea8793d9845ffc2beb09f7fbb",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/scripts/export_anonymized_predictions.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "4c495c013abb922a4aa563fd1e80bf54f11b35eea8793d9845ffc2beb09f7fbb"
     },
     {
       "path": "scripts/export_primary_exact_bypass.py",
-      "release_sha256": "9586b361b0b2a6428a94146e768865aaeed62f9677e2734558665f708838f925",
+      "release_sha256": "dde06fa9d7b26106703b81e4a55f52459729867b3414d120aa5a9126c9c31ab0",
       "status": "new_release_file"
     },
     {
       "path": "scripts/generate_synthetic_trace.py",
       "release_sha256": "5391850c55245cfdf1208f0e28f11c0ec3f3f573c6a3d1ca67475e1562002b27",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/scripts/generate_synthetic_trace.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "5391850c55245cfdf1208f0e28f11c0ec3f3f573c6a3d1ca67475e1562002b27"
     },
     {
       "path": "scripts/make_synthetic_trace.py",
       "release_sha256": "e4626ba8700a3267fdf7208496150cc596c1ce924c7fad715f73f54823162067",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/scripts/make_synthetic_trace.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "e4626ba8700a3267fdf7208496150cc596c1ce924c7fad715f73f54823162067"
     },
     {
       "path": "scripts/package_online_study.py",
-      "release_sha256": "52283eb22016819149162b6bed04986633caf92ea74b8790e25bd10179e48cf7",
-      "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/scripts/package_online_study.py",
+      "release_sha256": "30e2bc02ee5e0757b2ce56d97f3e040c4bba051e9c0fac1263b8b76cd6f51b3d",
+      "status": "adapted_copy",
+      "source_collection": "prediction-experiments",
       "original_sha256": "52283eb22016819149162b6bed04986633caf92ea74b8790e25bd10179e48cf7"
     },
     {
       "path": "scripts/prepare_data.py",
       "release_sha256": "d1525a3d8c63259fd30b6bed1809dfd7b4ebcc6b549d0f763c6aad1962e4d03d",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/scripts/prepare_data.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "d1525a3d8c63259fd30b6bed1809dfd7b4ebcc6b549d0f763c6aad1962e4d03d"
     },
     {
-      "path": "scripts/prepare_reviewer_windows.py",
-      "release_sha256": "ae34ff4ef61d6104e36978c9873b2b02641fe78439644b34ec47b688e99d349e",
-      "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/scripts/prepare_reviewer_windows.py",
+      "path": "scripts/prepare_temporal_windows.py",
+      "release_sha256": "f8f71f084a5f12de0d33b6a45b319140b5df2e01e556cb3a5f2537621ba81d8f",
+      "status": "adapted_copy",
+      "source_collection": "prediction-experiments",
       "original_sha256": "ae34ff4ef61d6104e36978c9873b2b02641fe78439644b34ec47b688e99d349e"
     },
     {
       "path": "scripts/report_publication_results.py",
-      "release_sha256": "4e865c5739bc67cf3843ea23d39baea469aa779af8b051e08b677b2983da1b26",
+      "release_sha256": "8843b91af305ae0aacc66a4a86397b94069ff58c86d6640af5ba13335d857720",
       "status": "new_release_file"
     },
     {
       "path": "scripts/run_all.py",
       "release_sha256": "3fd93a1b4b94cb2cd12b33407b2f978f9228171a26f0f7dc06205f05404c3688",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/scripts/run_all.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "3fd93a1b4b94cb2cd12b33407b2f978f9228171a26f0f7dc06205f05404c3688"
     },
     {
@@ -885,16 +885,16 @@
     },
     {
       "path": "scripts/run_matched_baselines.py",
-      "release_sha256": "725a7720c7bba30880c9397de080e14ac67c76322b6f6188bab04137d9426490",
-      "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/scripts/run_matched_baselines.py",
+      "release_sha256": "28b104572fdabd8e852218bdbae99e7eb2cfeec6411242a8d9c5545a26398db6",
+      "status": "adapted_copy",
+      "source_collection": "prediction-experiments",
       "original_sha256": "725a7720c7bba30880c9397de080e14ac67c76322b6f6188bab04137d9426490"
     },
     {
       "path": "scripts/run_no_code_cascade_experiment.py",
       "release_sha256": "c4feca65097b190a3ad96b7c7dfff164571828c4cd138b32c6ce478f9d343938",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/scripts/run_no_code_cascade_experiment.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "c4feca65097b190a3ad96b7c7dfff164571828c4cd138b32c6ce478f9d343938"
     },
     {
@@ -906,8 +906,15 @@
       "path": "scripts/run_paper_experiments.py",
       "release_sha256": "90c7e2ecea731785928868f7809d930da71b80376bcfcd28b91cd0e7db5db88e",
       "status": "adapted_copy",
-      "original_path": "20261021/reviewer_experiments/scripts/run_paper_experiments.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "40d42a50ea263eb952cd57d4ac5d016007fcbb2b5f51ffb982f272bf01cf766e"
+    },
+    {
+      "path": "scripts/run_prediction_experiments.py",
+      "release_sha256": "79bd789a0e2a34379c3fabcf92431b08fe2b4e6196251e7ac2db32b687257ddc",
+      "status": "adapted_copy",
+      "source_collection": "prediction-experiments",
+      "original_sha256": "af489cabcbfd15623c384deffb4f36f74d61a0402925bf9b0aaac090b809dfd0"
     },
     {
       "path": "scripts/run_primary.slurm",
@@ -916,22 +923,15 @@
     },
     {
       "path": "scripts/run_publication_experiments.py",
-      "release_sha256": "a0af68b83f719f2544cfe4c35938807eda75faf205d5cb5807272daf81cf6ea9",
+      "release_sha256": "0ab02be42bfc5e41d7f32c13e5a5594c4d8f2af40bc37b043d50bbc62df91b3b",
       "status": "new_release_file"
     },
     {
       "path": "scripts/run_reliability_cascade_matrix.py",
       "release_sha256": "7de8135f1fe8c5eb9c797d2b076e80c19d0c55350345a837c941a3a792c775ca",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/scripts/run_reliability_cascade_matrix.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "7de8135f1fe8c5eb9c797d2b076e80c19d0c55350345a837c941a3a792c775ca"
-    },
-    {
-      "path": "scripts/run_reviewer_experiments.py",
-      "release_sha256": "af489cabcbfd15623c384deffb4f36f74d61a0402925bf9b0aaac090b809dfd0",
-      "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/scripts/run_reviewer_experiments.py",
-      "original_sha256": "af489cabcbfd15623c384deffb4f36f74d61a0402925bf9b0aaac090b809dfd0"
     },
     {
       "path": "scripts/run_temporal.slurm",
@@ -942,7 +942,7 @@
       "path": "scripts/show_selected_sweep.py",
       "release_sha256": "1d6e734740609132c01b143bcf51997e67c132bc0119d2b78355a7115c345bea",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/scripts/show_selected_sweep.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "1d6e734740609132c01b143bcf51997e67c132bc0119d2b78355a7115c345bea"
     },
     {
@@ -951,206 +951,220 @@
       "status": "new_release_file"
     },
     {
-      "path": "scripts/smoke_reviewer_pipeline.py",
+      "path": "scripts/smoke_prediction_pipeline.py",
       "release_sha256": "c1d2cfa7a3e7255f7ecd4ae1701ad19be5a9e9a54fc255d989315b13f105d289",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/scripts/smoke_reviewer_pipeline.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "c1d2cfa7a3e7255f7ecd4ae1701ad19be5a9e9a54fc255d989315b13f105d289"
     },
     {
-      "path": "scripts/smoke_reviewer_protocol.py",
-      "release_sha256": "63bf338dd893570e18f08ed4fd2850e2e4d7d7bb961e891ae790563ff6f8ded0",
-      "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/scripts/smoke_reviewer_protocol.py",
+      "path": "scripts/smoke_prediction_protocol.py",
+      "release_sha256": "82d264d9bc115b31bccf5b65359afbb4fe8914c00728d149ed22f885f02e0fd1",
+      "status": "adapted_copy",
+      "source_collection": "prediction-experiments",
       "original_sha256": "63bf338dd893570e18f08ed4fd2850e2e4d7d7bb961e891ae790563ff6f8ded0"
     },
     {
       "path": "scripts/summarize_reliability_cascade.py",
       "release_sha256": "7a494c7941f8f7c7b2d097469e7e1e8d2296649837ab09229e29a114d3886b2f",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/scripts/summarize_reliability_cascade.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "7a494c7941f8f7c7b2d097469e7e1e8d2296649837ab09229e29a114d3886b2f"
     },
     {
       "path": "scripts/validate_data.py",
       "release_sha256": "d7ddafc89726a8af04c37306a972eef7a17e6c420b6ead6c5bbbbe7441549590",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/scripts/validate_data.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "d7ddafc89726a8af04c37306a972eef7a17e6c420b6ead6c5bbbbe7441549590"
     },
     {
       "path": "scripts/verify_baseline_run.py",
       "release_sha256": "98bfa9bd84076627a53ebec0783efc664a9b0c6df7c3f52f22e0b955bc0c55d1",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/scripts/verify_baseline_run.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "98bfa9bd84076627a53ebec0783efc664a9b0c6df7c3f52f22e0b955bc0c55d1"
     },
     {
       "path": "tests/test_aggregate_cascade_reference.py",
       "release_sha256": "18f8b08940ecfe95ec2f71e8121fdaef2e9865ef86c9dbae6af4b858a80d0130",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/tests/test_aggregate_cascade_reference.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "18f8b08940ecfe95ec2f71e8121fdaef2e9865ef86c9dbae6af4b858a80d0130"
     },
     {
       "path": "tests/test_aggregate_results.py",
       "release_sha256": "46f52ecd811750ca3e19a6f56370c6c5ef579d048d1ec2413c24af16d8019265",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/tests/test_aggregate_results.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "46f52ecd811750ca3e19a6f56370c6c5ef579d048d1ec2413c24af16d8019265"
     },
     {
       "path": "tests/test_artifacts.py",
       "release_sha256": "97c34dd75df0fda2655ea899a7b52884d9a683dbf728d2516b400d7822315647",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/tests/test_artifacts.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "97c34dd75df0fda2655ea899a7b52884d9a683dbf728d2516b400d7822315647"
     },
     {
       "path": "tests/test_base_selection.py",
       "release_sha256": "c3bd755b9b10f4a8855fec6c0a54cbdd72b55357594fa96f6ab4512dd5424e3e",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/tests/test_base_selection.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "c3bd755b9b10f4a8855fec6c0a54cbdd72b55357594fa96f6ab4512dd5424e3e"
     },
     {
       "path": "tests/test_cache_replay.py",
       "release_sha256": "bd6b6b93ee185b161fd63c08b59d900c4df25c152145054376134486cfc0f44a",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/tests/test_cache_replay.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "bd6b6b93ee185b161fd63c08b59d900c4df25c152145054376134486cfc0f44a"
     },
     {
       "path": "tests/test_cascade_base_selection.py",
       "release_sha256": "3c54a40aa2f1343d059831490cce4f39da8c7d5b64d9eea5a679b6e03198648f",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/tests/test_cascade_base_selection.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "3c54a40aa2f1343d059831490cce4f39da8c7d5b64d9eea5a679b6e03198648f"
     },
     {
       "path": "tests/test_cascade_subgroups.py",
       "release_sha256": "44f0d9fc5c333fdcfbe8af59853c155ddc2146227d9784a9c5f8f74db40596d9",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/tests/test_cascade_subgroups.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "44f0d9fc5c333fdcfbe8af59853c155ddc2146227d9784a9c5f8f74db40596d9"
     },
     {
       "path": "tests/test_data.py",
       "release_sha256": "af0778d1a6fc3fcbb86c326d47a1eaada3f3f8d242d7e466dbe1ecba0104e813",
       "status": "adapted_copy",
-      "original_path": "20261021/reviewer_experiments/tests/test_data.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "14fcea00fa06146305d3f09325fc2562dc0f0f75b128c9d679b6e47d86f923bf"
     },
     {
       "path": "tests/test_dynamic_hybrid.py",
       "release_sha256": "d698e08045fc33ad88c0502163886a2c471a8ad45d1d0607c9aff94adc0bac1d",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/tests/test_dynamic_hybrid.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "d698e08045fc33ad88c0502163886a2c471a8ad45d1d0607c9aff94adc0bac1d"
     },
     {
       "path": "tests/test_history.py",
       "release_sha256": "314132b0427cc6585638eb374b60e354725bb5adfc77ec66607202ca8573977c",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/tests/test_history.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "314132b0427cc6585638eb374b60e354725bb5adfc77ec66607202ca8573977c"
     },
     {
       "path": "tests/test_hybrid.py",
       "release_sha256": "2d71eb487738db2ec2e0b434822a01b35a920b6502dc8094f518a89dcc6d487b",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/tests/test_hybrid.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "2d71eb487738db2ec2e0b434822a01b35a920b6502dc8094f518a89dcc6d487b"
     },
     {
       "path": "tests/test_hybrid_oracle.py",
       "release_sha256": "4ea7bfa3f56991b86590d13000e88b7eb0a9f09d0f7370143a6aff5678bc5d46",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/tests/test_hybrid_oracle.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "4ea7bfa3f56991b86590d13000e88b7eb0a9f09d0f7370143a6aff5678bc5d46"
     },
     {
       "path": "tests/test_hybrid_subgroups.py",
       "release_sha256": "f7a72c23be2c93c20939af0e378d30c316d6ac1dea465ca90d940b7cd1bf315f",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/tests/test_hybrid_subgroups.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "f7a72c23be2c93c20939af0e378d30c316d6ac1dea465ca90d940b7cd1bf315f"
     },
     {
       "path": "tests/test_last1.py",
       "release_sha256": "4dbd3e69e11ffc8a43913e9dfd83fcb5277e5ff2027a3ca011a099ff2439a26a",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/tests/test_last1.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "4dbd3e69e11ffc8a43913e9dfd83fcb5277e5ff2027a3ca011a099ff2439a26a"
     },
     {
       "path": "tests/test_matched_baselines_neural.py",
       "release_sha256": "c290f75f62e364adeaa25d93bfc35f2f6cbfb0036a9271582ef127964d193dfd",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/tests/test_matched_baselines_neural.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "c290f75f62e364adeaa25d93bfc35f2f6cbfb0036a9271582ef127964d193dfd"
     },
     {
       "path": "tests/test_matched_baselines_runner.py",
       "release_sha256": "7dd839765fcf3fb637133a132abb5fffa05e1cf0e4b827b18a72164de936ad63",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/tests/test_matched_baselines_runner.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "7dd839765fcf3fb637133a132abb5fffa05e1cf0e4b827b18a72164de936ad63"
     },
     {
       "path": "tests/test_matched_baselines_xgb.py",
       "release_sha256": "127bf05acb5ecfb99b727812fa62bad81e4c6d410820162ee911b2318e735cbe",
       "status": "adapted_copy",
-      "original_path": "20261021/reviewer_experiments/tests/test_matched_baselines_xgb.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "9fabf06f4f69f6c032fa0a1e8b8eda9f8fcf22905dd317b99c327c6a315319e1"
     },
     {
       "path": "tests/test_metrics.py",
       "release_sha256": "39d7016fac50faa790cfb1bf664b9d8d662665c58e87b176fad9faeb0581f792",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/tests/test_metrics.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "39d7016fac50faa790cfb1bf664b9d8d662665c58e87b176fad9faeb0581f792"
     },
     {
       "path": "tests/test_neural_protocol.py",
       "release_sha256": "6d370b52b9a7ea59517903c206b806f593c1a8c1e4bb0a285d8246cf5a8f8a12",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/tests/test_neural_protocol.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "6d370b52b9a7ea59517903c206b806f593c1a8c1e4bb0a285d8246cf5a8f8a12"
     },
     {
       "path": "tests/test_no_code_cascade_experiment.py",
       "release_sha256": "5aa1d770ca96a313d080f27571207c00d291a88d8b5c55cc9c455d473e30c292",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/tests/test_no_code_cascade_experiment.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "5aa1d770ca96a313d080f27571207c00d291a88d8b5c55cc9c455d473e30c292"
     },
     {
       "path": "tests/test_online_runtime.py",
       "release_sha256": "c96c5d9b8a1057c2fc13e1b7ef6689b4ca9159354f69a29592d4ae07f079064a",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/tests/test_online_runtime.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "c96c5d9b8a1057c2fc13e1b7ef6689b4ca9159354f69a29592d4ae07f079064a"
     },
     {
       "path": "tests/test_paired_significance.py",
       "release_sha256": "1fc0c3ce08851b56f9f447ead0f5dd644a30ca5af2998c0aecec9ffc0728bd67",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/tests/test_paired_significance.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "1fc0c3ce08851b56f9f447ead0f5dd644a30ca5af2998c0aecec9ffc0728bd67"
     },
     {
       "path": "tests/test_paper_experiment_runner.py",
       "release_sha256": "7317c5cbacbd067bcaecaedf68944c10889e7cd9e683a2527ea9fa744008fb24",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/tests/test_paper_experiment_runner.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "7317c5cbacbd067bcaecaedf68944c10889e7cd9e683a2527ea9fa744008fb24"
+    },
+    {
+      "path": "tests/test_prediction_diagnostics.py",
+      "release_sha256": "06e85c451a171102683d20f53ea9c2a9ff13bf24252b7c446729dda74fc4b6fe",
+      "status": "adapted_copy",
+      "source_collection": "prediction-experiments",
+      "original_sha256": "653bdf12f29795c13bf7a3469777ed156645654e7a40eb128f9213f6f0ee6304"
+    },
+    {
+      "path": "tests/test_prediction_runner.py",
+      "release_sha256": "b6ef43c27c69dce325684af4cb542fc507e1b740f7b40464e24e4aaa8ada721f",
+      "status": "adapted_copy",
+      "source_collection": "prediction-experiments",
+      "original_sha256": "8dbe753143f3cbe1ace29379cec872bdaba3b841becf67963118f1adc810e29e"
     },
     {
       "path": "tests/test_preprocessing.py",
       "release_sha256": "79371444a6b7eff56fd380bf1ef779b70f30e3fe9211f48d72c3c21d30dff760",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/tests/test_preprocessing.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "79371444a6b7eff56fd380bf1ef779b70f30e3fe9211f48d72c3c21d30dff760"
     },
     {
@@ -1167,138 +1181,120 @@
       "path": "tests/test_qwen_benchmark.py",
       "release_sha256": "2df4170acffa4b1e917ff3c0f0871b8867af82f1e7290bb33ed146c66a4f60f2",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/tests/test_qwen_benchmark.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "2df4170acffa4b1e917ff3c0f0871b8867af82f1e7290bb33ed146c66a4f60f2"
     },
     {
       "path": "tests/test_qwen_contract.py",
       "release_sha256": "a1fad18e146101be4d9a94361bfb6bfb0baa9e6013fc9710e4ba787a4fa83b6c",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/tests/test_qwen_contract.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "a1fad18e146101be4d9a94361bfb6bfb0baa9e6013fc9710e4ba787a4fa83b6c"
     },
     {
       "path": "tests/test_qwen_embedding_reuse.py",
       "release_sha256": "01d71b915d21ec2c35a2f4a53ec481a95af0fe161c4cc083aebb6472d3eb6ff8",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/tests/test_qwen_embedding_reuse.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "01d71b915d21ec2c35a2f4a53ec481a95af0fe161c4cc083aebb6472d3eb6ff8"
     },
     {
       "path": "tests/test_qwen_no_code.py",
       "release_sha256": "7dddbbaf29d7c3bb87d54d328adf36ba581a6156e8e4134dd1427a228dd1bd54",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/tests/test_qwen_no_code.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "7dddbbaf29d7c3bb87d54d328adf36ba581a6156e8e4134dd1427a228dd1bd54"
     },
     {
       "path": "tests/test_release_predictions.py",
       "release_sha256": "b4a9b8fe3cdf53ddb19f957ccedd7187ee0d09026de3520069410e9338018b08",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/tests/test_release_predictions.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "b4a9b8fe3cdf53ddb19f957ccedd7187ee0d09026de3520069410e9338018b08"
     },
     {
       "path": "tests/test_reliability_cascade.py",
       "release_sha256": "2e3741d06e726a5e16655839557ac31c272cbd973d9e441655df60dbc9e4b882",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/tests/test_reliability_cascade.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "2e3741d06e726a5e16655839557ac31c272cbd973d9e441655df60dbc9e4b882"
     },
     {
       "path": "tests/test_reliability_cascade_integrity.py",
       "release_sha256": "7557ceb4a8e2e855820bc020080ebf032a199622b6e4ca45cbf7c6a217417c77",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/tests/test_reliability_cascade_integrity.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "7557ceb4a8e2e855820bc020080ebf032a199622b6e4ca45cbf7c6a217417c77"
     },
     {
       "path": "tests/test_reliability_cascade_paths.py",
       "release_sha256": "eab2beace2ccefdcd0023d7960887499a76db0920f6b05490e95995d4ec24c7e",
       "status": "adapted_copy",
-      "original_path": "20261021/reviewer_experiments/tests/test_reliability_cascade_paths.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "74756c6555a7b1b4c62aaae7bf0284e950b7bdd0297e526830fc4aab08807207"
     },
     {
       "path": "tests/test_reproduction_environment.py",
       "release_sha256": "57586cfd5cea8b8302d88ef468cfdbd1704a9765a658cb34080d9d73e8552d1b",
       "status": "adapted_copy",
-      "original_path": "20261021/reviewer_experiments/tests/test_reproduction_environment.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "1ce7db9d779404be3d8e65869251c07ceff95663357abe766d2b403835a12e3e"
     },
     {
-      "path": "tests/test_reviewer_diagnostics.py",
-      "release_sha256": "09c26567f3ad1323ce06954efd9f9c8d6f17584fbe535cd9e2ddf672e13a9f87",
-      "status": "adapted_copy",
-      "original_path": "20261021/reviewer_experiments/tests/test_reviewer_diagnostics.py",
-      "original_sha256": "653bdf12f29795c13bf7a3469777ed156645654e7a40eb128f9213f6f0ee6304"
-    },
-    {
-      "path": "tests/test_reviewer_runner.py",
-      "release_sha256": "8dbe753143f3cbe1ace29379cec872bdaba3b841becf67963118f1adc810e29e",
-      "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/tests/test_reviewer_runner.py",
-      "original_sha256": "8dbe753143f3cbe1ace29379cec872bdaba3b841becf67963118f1adc810e29e"
-    },
-    {
-      "path": "tests/test_reviewer_windows.py",
-      "release_sha256": "ff4c6482b75018df539bdaff2c3859bc44812ab1dbbdebce427b3c30a6b4874c",
-      "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/tests/test_reviewer_windows.py",
-      "original_sha256": "ff4c6482b75018df539bdaff2c3859bc44812ab1dbbdebce427b3c30a6b4874c"
-    },
-    {
       "path": "tests/test_synthetic_trace.py",
-      "release_sha256": "ec4ec385fdc3428ff49ba670da009462fa2604498f71a66edeffe4dbc660f8f7",
-      "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/tests/test_synthetic_trace.py",
+      "release_sha256": "c7672b8c718d43334f37eec051433b332308280cb640ef56eac2bb495b0136c8",
+      "status": "adapted_copy",
+      "source_collection": "prediction-experiments",
       "original_sha256": "ec4ec385fdc3428ff49ba670da009462fa2604498f71a66edeffe4dbc660f8f7"
+    },
+    {
+      "path": "tests/test_temporal_windows.py",
+      "release_sha256": "bb85c683c2b0cc769a2e8752f2c3797478978f8b70a71d0c0b17436201001e90",
+      "status": "adapted_copy",
+      "source_collection": "prediction-experiments",
+      "original_sha256": "ff4c6482b75018df539bdaff2c3859bc44812ab1dbbdebce427b3c30a6b4874c"
     },
     {
       "path": "tests/test_token_coverage.py",
       "release_sha256": "d8777f22f741851a214b1142702521884518b02c60b38065a461344a3eded895",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/tests/test_token_coverage.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "d8777f22f741851a214b1142702521884518b02c60b38065a461344a3eded895"
     },
     {
       "path": "tests/test_verify_baseline_run.py",
       "release_sha256": "06ce43555281f11bf9be9332e466d18f8fcc3add148240c101f21eb54444a6f0",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/tests/test_verify_baseline_run.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "06ce43555281f11bf9be9332e466d18f8fcc3add148240c101f21eb54444a6f0"
     },
     {
       "path": "textcnn/evaluate.py",
       "release_sha256": "8ab56395d8da69872bb88a803db2840f5efb57096460adcf8c6c03c0b6741235",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/textcnn/evaluate.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "8ab56395d8da69872bb88a803db2840f5efb57096460adcf8c6c03c0b6741235"
     },
     {
       "path": "textcnn/model.py",
       "release_sha256": "2e8d794777107646cdd4df496ed35ab0cde2f6bdc927cb1173cd4b7418f194d1",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/textcnn/model.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "2e8d794777107646cdd4df496ed35ab0cde2f6bdc927cb1173cd4b7418f194d1"
     },
     {
       "path": "textcnn/train.py",
       "release_sha256": "0d5f5434e0b59a4fc04eda42ea5f207ee3a8599898a6eeb72c9b1c2e9f10fb3f",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/textcnn/train.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "0d5f5434e0b59a4fc04eda42ea5f207ee3a8599898a6eeb72c9b1c2e9f10fb3f"
     },
     {
       "path": "xgboost/run.py",
       "release_sha256": "8b5b09810dc3a84d51d12ce0c1149003c6c9fad04902ad43ae2bf875b2b19734",
       "status": "unchanged_copy",
-      "original_path": "20261021/reviewer_experiments/xgboost/run.py",
+      "source_collection": "prediction-experiments",
       "original_sha256": "8b5b09810dc3a84d51d12ce0c1149003c6c9fad04902ad43ae2bf875b2b19734"
     }
-  ],
-  "revision": {
-    "date": "2026-10-27",
-    "scope": "English documentation and source packaging maintenance; prediction algorithms and experiment protocols unchanged"
-  }
+  ]
 }
